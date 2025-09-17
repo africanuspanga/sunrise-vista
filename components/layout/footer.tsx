@@ -1,31 +1,11 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="bg-black text-white">
-      {/* Newsletter Section */}
-      <div className="bg-orange-500 border-b border-orange-600">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 text-white">Stay in Touch</h3>
-            <p className="text-white mb-6">Get the latest safari updates and travel tips delivered to your inbox.</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
-              />
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6">Subscribe</Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-10">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -39,14 +19,20 @@ export function Footer() {
               Creating unforgettable safari experiences across Tanzania's most spectacular destinations.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer" />
+              <a
+                href="https://www.facebook.com/kachikisafaris/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white cursor-pointer transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
               <Twitter className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer" />
               <Instagram className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer" />
               <Youtube className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer" />
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -56,8 +42,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/safaris" className="text-gray-300 hover:text-white transition-colors">
-                  Our Safaris
+                <Link href="/tours" className="text-gray-300 hover:text-white transition-colors">
+                  Safari Tours
+                </Link>
+              </li>
+              <li>
+                <Link href="/accommodations" className="text-gray-300 hover:text-white transition-colors">
+                  Accommodations
                 </Link>
               </li>
               <li>
@@ -78,10 +69,19 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Destinations */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Destinations</h4>
+            <h4 className="text-lg font-bold mb-4">Safari Circuits</h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/safaris/northern-circuit" className="text-gray-300 hover:text-white transition-colors">
+                  Northern Circuit
+                </Link>
+              </li>
+              <li>
+                <Link href="/safaris/southern-circuit" className="text-gray-300 hover:text-white transition-colors">
+                  Southern Circuit
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/safaris/northern-circuit/ngorongoro"
@@ -104,14 +104,6 @@ export function Footer() {
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Mikumi
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/safaris/southern-circuit/ruaha"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Ruaha
                 </Link>
               </li>
             </ul>

@@ -31,20 +31,20 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-orange-50">
       {/* Hero Section */}
-      <section className="relative h-[300px] bg-gradient-to-r from-amber-900/80 to-orange-800/80 overflow-hidden">
+      <section className="relative h-[300px] bg-gradient-to-r from-[#473a30] to-[#ec6417] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/closeup-shot-obstinacy-buffalo-green-field-sunny-day.jpg-FLHGNDqlrqMg76NQVFzSXnI5FF4gqK.jpeg')`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 to-orange-800/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#473a30] to-[#ec6417] opacity-60" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Contact Us</h1>
-            <p className="text-xl text-amber-100 leading-relaxed">
+            <p className="text-xl text-orange-100 leading-relaxed">
               Ready to plan your Tanzanian adventure? Get in touch with us today.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="bg-white shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl text-amber-900">Send us a Message</CardTitle>
+                <CardTitle className="text-2xl text-[#473a30]">Send us a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full">
+                  <Button type="submit" className="w-full bg-[#ec6417] hover:bg-[#f9b804] text-white rounded-full">
                     Send Message
                   </Button>
                 </form>
@@ -133,10 +133,10 @@ export default function ContactPage() {
             <div className="space-y-8">
               <Card className="bg-white shadow-lg">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-amber-900 mb-6">Get in Touch</h3>
+                  <h3 className="text-xl font-bold text-[#473a30] mb-6">Get in Touch</h3>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-4">
-                      <MapPin className="w-6 h-6 text-orange-600 mt-1" />
+                      <MapPin className="w-6 h-6 text-[#ec6417] mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-900">Address</h4>
                         <p className="text-gray-600">Arusha, Tanzania</p>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <Phone className="w-6 h-6 text-orange-600 mt-1" />
+                      <Phone className="w-6 h-6 text-[#ec6417] mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-900">Phone</h4>
                         <p className="text-gray-600">+255 762 756 046</p>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <Mail className="w-6 h-6 text-orange-600 mt-1" />
+                      <Mail className="w-6 h-6 text-[#ec6417] mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-900">Email</h4>
                         <p className="text-gray-600">info@kachikisafaris.com</p>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <MessageCircle className="w-6 h-6 text-orange-600 mt-1" />
+                      <MessageCircle className="w-6 h-6 text-[#ec6417] mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-900">WhatsApp</h4>
                         <p className="text-gray-600">+255 762 756 046</p>
@@ -183,11 +183,11 @@ export default function ContactPage() {
               </Card>
 
               {/* Quick Contact */}
-              <Card className="bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg">
+              <Card className="bg-gradient-to-r from-[#ec6417] to-[#f9b804] text-white shadow-lg">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-xl font-bold mb-4">Need Immediate Assistance?</h3>
                   <p className="mb-6">Contact us directly via WhatsApp for quick responses</p>
-                  <Button asChild className="bg-white text-orange-600 hover:bg-gray-100 rounded-full">
+                  <Button asChild className="bg-white text-[#ec6417] hover:bg-gray-100 rounded-full">
                     <a href="https://wa.me/255762756046" target="_blank" rel="noopener noreferrer">
                       Chat on WhatsApp
                     </a>

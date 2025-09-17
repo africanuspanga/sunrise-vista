@@ -5,9 +5,9 @@ import Link from "next/link"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-orange-50">
       {/* Hero Section */}
-      <section className="relative h-[400px] bg-gradient-to-r from-amber-900/80 to-orange-800/80 overflow-hidden">
+      <section className="relative h-[400px] bg-gradient-to-r from-[#473a30] to-[#ec6417] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -68,12 +68,12 @@ export default function AboutPage() {
 
             {/* Values Grid */}
             <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <Card className="bg-amber-50 border-amber-200">
+              <Card className="bg-orange-50 border-orange-200">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                    <Heart className="w-6 h-6 text-orange-600" />
+                    <Heart className="w-6 h-6 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-xl font-bold text-amber-900 mb-3">Our Mission</h3>
+                  <h3 className="text-xl font-bold text-[#473a30] mb-3">Our Mission</h3>
                   <p className="text-gray-700">
                     To create unforgettable safari experiences while supporting local communities and wildlife
                     conservation efforts across Tanzania.
@@ -81,12 +81,12 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-amber-50 border-amber-200">
+              <Card className="bg-orange-50 border-orange-200">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                    <Award className="w-6 h-6 text-orange-600" />
+                    <Award className="w-6 h-6 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-xl font-bold text-amber-900 mb-3">Our Vision</h3>
+                  <h3 className="text-xl font-bold text-[#473a30] mb-3">Our Vision</h3>
                   <p className="text-gray-700">
                     To be Tanzania's leading safari company, known for exceptional service, authentic experiences, and
                     positive impact on wildlife and communities.
@@ -97,37 +97,37 @@ export default function AboutPage() {
 
             {/* Team Section */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-amber-900 mb-8">Why Choose Us</h2>
+              <h2 className="text-3xl font-bold text-[#473a30] mb-8">Why Choose Us</h2>
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-orange-600" />
+                    <Users className="w-8 h-8 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-lg font-bold text-amber-900 mb-2">Expert Guides</h3>
+                  <h3 className="text-lg font-bold text-[#473a30] mb-2">Expert Guides</h3>
                   <p className="text-gray-600 text-sm">Professional, knowledgeable guides with years of experience</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-8 h-8 text-orange-600" />
+                    <MapPin className="w-8 h-8 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-lg font-bold text-amber-900 mb-2">Local Knowledge</h3>
+                  <h3 className="text-lg font-bold text-[#473a30] mb-2">Local Knowledge</h3>
                   <p className="text-gray-600 text-sm">Deep understanding of Tanzania's parks, culture, and wildlife</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="w-8 h-8 text-orange-600" />
+                    <Award className="w-8 h-8 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-lg font-bold text-amber-900 mb-2">Personalized Service</h3>
+                  <h3 className="text-lg font-bold text-[#473a30] mb-2">Personalized Service</h3>
                   <p className="text-gray-600 text-sm">Tailor-made itineraries designed around your interests</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-orange-600" />
+                    <Heart className="w-8 h-8 text-[#ec6417]" />
                   </div>
-                  <h3 className="text-lg font-bold text-amber-900 mb-2">Responsible Tourism</h3>
+                  <h3 className="text-lg font-bold text-[#473a30] mb-2">Responsible Tourism</h3>
                   <p className="text-gray-600 text-sm">Supporting conservation and local communities</p>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg rounded-full"
+                className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 text-lg rounded-full"
               >
                 <Link href="/contact">Start Planning Your Safari</Link>
               </Button>

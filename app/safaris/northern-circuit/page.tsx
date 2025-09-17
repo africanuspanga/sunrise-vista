@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function NorthernCircuitPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-orange-50">
       <WhatsAppFloat />
 
       {/* Hero Section */}
@@ -38,8 +38,8 @@ export default function NorthernCircuitPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-amber-900 mb-4">Ngorongoro Crater</h2>
-                <p className="text-xl text-amber-700 mb-6 italic">
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Ngorongoro Crater</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">
                   "Step into the world's largest intact volcanic caldera – a haven for wildlife."
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -54,25 +54,25 @@ export default function NorthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-amber-900 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>UNESCO World Heritage Site
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>UNESCO World Heritage Site
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>One of the best places to spot the
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>One of the best places to spot the
                       Big Five
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Home to over 25,000 large animals
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Home to over 25,000 large animals
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Scenic views from the crater rim
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Scenic views from the crater rim
                     </li>
                   </ul>
                 </div>
 
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3">
+                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
                   Plan your Ngorongoro Safari with Kachiki Safaris today
                 </Button>
               </div>
@@ -89,7 +89,7 @@ export default function NorthernCircuitPage() {
       </section>
 
       {/* Lake Manyara National Park */}
-      <section className="py-16 bg-cream-50">
+      <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -101,8 +101,8 @@ export default function NorthernCircuitPage() {
                 />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-amber-900 mb-4">Lake Manyara National Park</h2>
-                <p className="text-xl text-amber-700 mb-6 italic">
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Lake Manyara National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">
                   "Where forests, lakes, and wildlife meet in harmony."
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -117,25 +117,25 @@ export default function NorthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-amber-900 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Famous tree-climbing lions
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Famous tree-climbing lions
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Huge elephant herds
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Huge elephant herds
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Seasonal flamingos on the lake
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Seasonal flamingos on the lake
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Birdwatching paradise (400+
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Birdwatching paradise (400+
                       species)
                     </li>
                   </ul>
                 </div>
 
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3">
+                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
                   Discover the magic of Lake Manyara with Kachiki Safaris
                 </Button>
               </div>
@@ -150,8 +150,8 @@ export default function NorthernCircuitPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-amber-900 mb-4">Tarangire National Park</h2>
-                <p className="text-xl text-amber-700 mb-6 italic">
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Tarangire National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">
                   "A land of giants — elephants and ancient baobabs."
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -165,25 +165,25 @@ export default function NorthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-amber-900 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Tanzania's largest elephant herds
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Tanzania's largest elephant herds
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Iconic baobab landscapes
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Iconic baobab landscapes
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Seasonal migration of wildebeest
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Seasonal migration of wildebeest
                       and zebra
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Superb birdwatching opportunities
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Superb birdwatching opportunities
                     </li>
                   </ul>
                 </div>
 
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3">
+                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
                   Experience Tarangire's wild beauty with Kachiki Safaris
                 </Button>
               </div>
@@ -200,7 +200,7 @@ export default function NorthernCircuitPage() {
       </section>
 
       {/* Lake Natron */}
-      <section className="py-16 bg-cream-50">
+      <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -212,8 +212,8 @@ export default function NorthernCircuitPage() {
                 />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-amber-900 mb-4">Lake Natron</h2>
-                <p className="text-xl text-amber-700 mb-6 italic">
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Lake Natron</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">
                   "A surreal landscape of fire, salt, and flamingos."
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -227,26 +227,26 @@ export default function NorthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-amber-900 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>World's main flamingo breeding
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>World's main flamingo breeding
                       site
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Stunning red/pink alkaline lake
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Stunning red/pink alkaline lake
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Views of Ol Doinyo Lengai volcano
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Views of Ol Doinyo Lengai volcano
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Unique cultural visits with the
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Unique cultural visits with the
                       Maasai
                     </li>
                   </ul>
                 </div>
 
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3">
+                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
                   Explore the wonders of Lake Natron with Kachiki Safaris
                 </Button>
               </div>
@@ -261,8 +261,8 @@ export default function NorthernCircuitPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-amber-900 mb-4">Arusha National Park</h2>
-                <p className="text-xl text-amber-700 mb-6 italic">
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Arusha National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">
                   "Diverse landscapes just minutes from Arusha town."
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -276,27 +276,27 @@ export default function NorthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-amber-900 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Close to Arusha town (great for
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Close to Arusha town (great for
                       day trips)
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Home to Mount Meru
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Home to Mount Meru
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Diverse scenery: forests, lakes,
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Diverse scenery: forests, lakes,
                       craters
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>Excellent for giraffes, zebras,
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Excellent for giraffes, zebras,
                       and monkeys
                     </li>
                   </ul>
                 </div>
 
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-4 text-lg">
                   Discover Arusha's hidden gem with Kachiki Safaris
                 </Button>
               </div>
@@ -316,14 +316,14 @@ export default function NorthernCircuitPage() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 md:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#473a30] mb-4 md:mb-6 px-4">
               Ready to Explore Tanzania's Northern Circuit?
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 px-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 px-4">
               Discover the iconic wildlife destinations of northern Tanzania with Kachiki Safaris. From the legendary
               Ngorongoro Crater to the elephant paradise of Tarangire, experience the very best of African wilderness.
             </p>
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
+            <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
               Start Your Northern Circuit Adventure
             </Button>
           </div>

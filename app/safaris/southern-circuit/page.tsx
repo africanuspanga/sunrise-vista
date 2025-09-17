@@ -1,6 +1,6 @@
 export default function SouthernCircuitPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-orange-50">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -25,8 +25,8 @@ export default function SouthernCircuitPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-brown-800 mb-4">Mikumi National Park</h2>
-                <p className="text-xl text-orange-600 mb-6 italic">An accessible safari gem in southern Tanzania.</p>
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Mikumi National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">An accessible safari gem in southern Tanzania.</p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Mikumi is often described as a "mini Serengeti," thanks to its wide open plains and rich wildlife.
                   Located just a few hours' drive from Dar es Salaam, it's one of Tanzania's most accessible safari
@@ -38,28 +38,27 @@ export default function SouthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-brown-700 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Only 4–5 hours from Dar es Salaam
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Only 4–5 hours from Dar es Salaam
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Lions, elephants, giraffes,
-                      hippos
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Lions, elephants, giraffes, hippos
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Landscapes similar to Serengeti
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Landscapes similar to Serengeti
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Great for shorter safari trips
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Great for shorter safari trips
                     </li>
                   </ul>
                 </div>
 
-                <p className="text-brown-700 font-medium mb-4">
+                <p className="text-[#473a30] font-medium mb-4">
                   Make Mikumi part of your adventure with Kachiki Safaris.
                 </p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Explore Mikumi
                 </button>
               </div>
@@ -76,7 +75,7 @@ export default function SouthernCircuitPage() {
       </section>
 
       {/* Nyerere National Park */}
-      <section className="py-16 bg-cream-50">
+      <section className="py-16 bg-orange-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -88,8 +87,8 @@ export default function SouthernCircuitPage() {
                 />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-brown-800 mb-4">Nyerere National Park (Selous)</h2>
-                <p className="text-xl text-orange-600 mb-6 italic">Africa's wildest and largest game reserve.</p>
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Nyerere National Park (Selous)</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">Africa's wildest and largest game reserve.</p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Formerly known as Selous, Nyerere National Park is one of Africa's largest protected areas. It's a
                   remote, untouched wilderness offering an authentic safari experience far from the crowds.
@@ -100,30 +99,30 @@ export default function SouthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-brown-700 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>One of the largest reserves in
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>One of the largest reserves in
                       Africa
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Unique boat safaris on Rufiji
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Unique boat safaris on Rufiji
                       River
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Home to wild dogs
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Home to wild dogs
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Remote and uncrowded safari
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Remote and uncrowded safari
                       experience
                     </li>
                   </ul>
                 </div>
 
-                <p className="text-brown-700 font-medium mb-4">
+                <p className="text-[#473a30] font-medium mb-4">
                   Explore the wild heart of Nyerere with Kachiki Safaris.
                 </p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Discover Nyerere
                 </button>
               </div>
@@ -138,8 +137,8 @@ export default function SouthernCircuitPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-brown-800 mb-4">Ruaha National Park</h2>
-                <p className="text-xl text-orange-600 mb-6 italic">Tanzania's best-kept safari secret.</p>
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Ruaha National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">Tanzania's best-kept safari secret.</p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Ruaha is Tanzania's largest national park, but also one of its least visited, making it a hidden gem.
                   Its rugged landscapes and remote setting offer a truly wild experience.
@@ -151,25 +150,25 @@ export default function SouthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-brown-700 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Tanzania's largest national park
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Tanzania's largest national park
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Excellent big cat sightings
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Excellent big cat sightings
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Remote and uncrowded
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Remote and uncrowded
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Huge elephant populations
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Huge elephant populations
                     </li>
                   </ul>
                 </div>
 
-                <p className="text-brown-700 font-medium mb-4">Venture into Ruaha's wilderness with Kachiki Safaris.</p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <p className="text-[#473a30] font-medium mb-4">Venture into Ruaha's wilderness with Kachiki Safaris.</p>
+                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Venture to Ruaha
                 </button>
               </div>
@@ -186,7 +185,7 @@ export default function SouthernCircuitPage() {
       </section>
 
       {/* Saadani National Park */}
-      <section className="py-16 bg-cream-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -198,8 +197,8 @@ export default function SouthernCircuitPage() {
                 />
               </div>
               <div>
-                <h2 className="text-4xl font-bold text-brown-800 mb-4">Saadani National Park</h2>
-                <p className="text-xl text-orange-600 mb-6 italic">Where the bush meets the beach.</p>
+                <h2 className="text-4xl font-bold text-[#473a30] mb-4">Saadani National Park</h2>
+                <p className="text-xl text-[#ec6417] mb-6 italic">Where the bush meets the beach.</p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   Saadani is Tanzania's only national park located on the Indian Ocean. It's the perfect combination of
                   wildlife and coastal beauty.
@@ -211,31 +210,31 @@ export default function SouthernCircuitPage() {
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-brown-700 mb-4">Highlights:</h3>
+                  <h3 className="text-xl font-semibold text-[#473a30] mb-4">Highlights:</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Tanzania's only coastal national
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Tanzania's only coastal national
                       park
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Wildlife viewing + beach
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Wildlife viewing + beach
                       relaxation
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Hippos and crocodiles in the Wami
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Hippos and crocodiles in the Wami
                       River
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Elephants and giraffes near the
+                      <span className="w-2 h-2 bg-[#ec6417] rounded-full mr-3"></span>Elephants and giraffes near the
                       coast
                     </li>
                   </ul>
                 </div>
 
-                <p className="text-brown-700 font-medium mb-4">
+                <p className="text-[#473a30] font-medium mb-4">
                   Experience Africa's unique bush-to-beach safari with Kachiki Safaris.
                 </p>
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Experience Saadani
                 </button>
               </div>
@@ -247,12 +246,12 @@ export default function SouthernCircuitPage() {
       {/* Call to Action Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-black">Ready to Explore Tanzania's Southern Circuit?</h2>
+          <h2 className="text-4xl font-bold mb-6 text-[#473a30]">Ready to Explore Tanzania's Southern Circuit?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-700">
             Discover the hidden gems of southern Tanzania with Kachiki Safaris. From accessible Mikumi to remote Ruaha,
             experience authentic African wilderness.
           </p>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-lg font-semibold text-lg transition-colors">
+          <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-12 py-4 rounded-lg font-semibold text-lg transition-colors">
             Plan Your Southern Safari
           </button>
         </div>

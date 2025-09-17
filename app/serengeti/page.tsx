@@ -197,12 +197,13 @@ export default function SerengetiPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-amber-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
+      <section className="py-16 bg-amber-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
             The Serengeti is not just a safari — it's the ultimate African adventure.
           </h2>
-          <p className="text-xl mb-8 text-amber-200">
+          <p className="text-xl mb-8 text-amber-100" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.8)" }}>
             Join Kachiki Safaris for a journey through the heart of the wild.
           </p>
           <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3 text-lg">
