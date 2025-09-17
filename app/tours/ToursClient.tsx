@@ -10,7 +10,7 @@ const allTours = [
     description:
       "This tour is for the ultimate Tanzania experience. It's perfect if you want to see all the highlights, from the wildlife-rich northern parks to the stunning beaches of Zanzibar, all in one comprehensive 15-day journey.",
     highlights: ["Arusha National Park", "Boat Safari", "Game Drive", "Lake Manyara National Park", "Lake Natron"],
-    price: "From €2,972 per person",
+    price: "From $3,507 per person",
     image: "/images/wildlife/elephant-tusks.jpeg", // Unique image for this tour
   },
   {
@@ -26,7 +26,7 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,679 per person",
+    price: "From $3,161 per person",
     image: "/images/wildlife/lioness-drinking.jpeg", // Unique image for this tour
   },
   {
@@ -42,7 +42,7 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,112 per person",
+    price: "From $2,492 per person",
     image: "/images/wildlife/zebras-grazing.jpeg", // Unique image for this tour
   },
   {
@@ -58,7 +58,7 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,233 per person",
+    price: "From $2,635 per person",
     image: "/images/wildlife/rhino-habitat.jpeg", // Unique image for this tour
   },
   {
@@ -74,7 +74,7 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,218 per person",
+    price: "From $2,617 per person",
     image: "/images/wildlife/elephant-mountains.jpeg", // Unique image for this tour
   },
   {
@@ -90,7 +90,7 @@ const allTours = [
       "Walking Safari",
       "Zanzibar",
     ],
-    price: "From €2,137 per person",
+    price: "From $2,522 per person",
     image: "/images/wildlife/leopard-tree.png", // Unique image for this tour
   },
   {
@@ -99,7 +99,7 @@ const allTours = [
     description:
       "Discover the enchanting customs and traditions of Tanzania on this inspiring tour. You'll visit several of the country's national parks before concluding your trip on the beautiful island of Zanzibar.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From €1,689 per person",
+    price: "From $1,993 per person",
     image: "/images/wildlife/cheetah-cub.png", // Unique image for this tour
   },
   {
@@ -108,7 +108,7 @@ const allTours = [
     description:
       "This fascinating tour starts in the historic town of Stone Town, where you can explore its narrow streets and rich history, before continuing on to the natural beauty of Lake Manyara.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From €1,671 per person",
+    price: "From $1,972 per person",
     image: "/images/wildlife/lion-pride.jpeg", // Unique image for this tour
   },
   {
@@ -124,7 +124,7 @@ const allTours = [
       "Tarangire National Park",
       "Walking Safari",
     ],
-    price: "From €3,037 per person",
+    price: "From $3,584 per person",
     image: "/images/wildlife/lion-rock.jpeg", // Unique image for this tour
   },
   {
@@ -140,7 +140,7 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,980 per person",
+    price: "From $3,516 per person",
     image: "/images/wildlife/bat-eared-foxes.webp", // Unique image for this tour
   },
   {
@@ -156,7 +156,7 @@ const allTours = [
       "Pololeti Game Reserve",
       "Serengeti National Park",
     ],
-    price: "From €2,865 per person",
+    price: "From $3,381 per person",
     image: "/images/wildlife/safari-guide-elephants.jpeg",
   },
   {
@@ -172,7 +172,7 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,345 per person",
+    price: "From $2,767 per person",
     image: "/images/wildlife/rhino-sunset.jpeg",
   },
   {
@@ -188,7 +188,7 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,323 per person",
+    price: "From $2,741 per person",
     image: "/images/wildlife/giraffes-balloon.jpeg",
   },
   {
@@ -204,7 +204,7 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,221 per person",
+    price: "From $2,621 per person",
     image: "/images/wildlife/tourist-elephants.jpeg",
   },
   {
@@ -220,7 +220,7 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,470 per person",
+    price: "From $2,915 per person",
     image: "/images/wildlife/elephant-herd-savanna.jpeg",
   },
   {
@@ -236,7 +236,7 @@ const allTours = [
       "Game Drive",
       "Lake Manyara National Park",
     ],
-    price: "From €2,281 per person",
+    price: "From $2,692 per person",
     image: "/images/wildlife/wildebeest-migration.jpeg",
   },
   {
@@ -252,7 +252,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Night Game Drive",
     ],
-    price: "From €2,415 per person",
+    price: "From $2,850 per person",
     image: "/images/wildlife/lion-feeding.jpeg",
   },
   {
@@ -268,7 +268,7 @@ const allTours = [
       "Game Drive",
       "Lake Natron",
     ],
-    price: "From €2,450 per person",
+    price: "From $2,891 per person",
     image: "/images/wildlife/tourist-giraffe.jpeg",
   },
   {
@@ -284,7 +284,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Pololeti Game Reserve",
     ],
-    price: "From €2,345 per person",
+    price: "From $2,767 per person",
     image: "/images/wildlife/cheetah-family.jpeg",
   },
   {
@@ -300,7 +300,7 @@ const allTours = [
       "Lake Natron",
       "Maasai Boma",
     ],
-    price: "From €1,788 per person",
+    price: "From $2,110 per person",
     image: "/images/wildlife/safari-vehicle-elephant.jpeg",
   },
   {
@@ -315,7 +315,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Serengeti National Park",
     ],
-    price: "From €1,550 per person",
+    price: "From $1,829 per person",
     image: "/images/wildlife/hippos-water.jpeg",
   },
   {
@@ -330,7 +330,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,497 per person",
+    price: "From $1,766 per person",
     image: "/images/wildlife/buffalo-bird.jpeg",
   },
   {
@@ -346,7 +346,7 @@ const allTours = [
       "Lake Manyara National Park",
       "Maasai Boma",
     ],
-    price: "From €837 per person",
+    price: "From $988 per person",
     image: "/images/wildlife/wildebeest-crossing.jpeg",
   },
   {
@@ -361,7 +361,7 @@ const allTours = [
       "Game Drive",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,810 per person",
+    price: "From $2,136 per person",
     image: "/images/wildlife/safari-zebras.jpeg",
   },
   {
@@ -376,7 +376,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,240 per person",
+    price: "From $1,463 per person",
     image: "/images/wildlife/african-sunset.jpeg",
   },
   {
@@ -391,7 +391,7 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,550 per person",
+    price: "From $1,829 per person",
     image: "/images/wildlife/zebras-closeup.jpeg",
   },
   {
@@ -406,7 +406,7 @@ const allTours = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From €895 per person",
+    price: "From $1,056 per person",
     image: "/images/wildlife/giraffe-portrait.jpeg",
   },
   {
@@ -421,7 +421,7 @@ const allTours = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From €617 per person",
+    price: "From $728 per person",
     image: "/images/wildlife/colorful-bird.jpeg",
   },
   {
@@ -430,7 +430,7 @@ const allTours = [
     description:
       "Experience an exciting two-day safari adventure in Tarangire National Park and the famous Ngorongoro Crater. It's the perfect option for a quick, impactful safari trip.",
     highlights: ["Tarangire National Park", "Game Drive", "Ngorongoro Crater", "Safari Jeep with Pop-up Roof"],
-    price: "From €427 per person",
+    price: "From $504 per person",
     image: "/images/wildlife/aerial-landscape.jpeg",
   },
   {
@@ -446,7 +446,7 @@ const allTours = [
       "Bush Walk",
       "Game Drive",
     ],
-    price: "From €1,920 per person",
+    price: "From $2,266 per person",
     image: "/images/wildlife/elephants-waterhole.jpeg",
   },
   {
@@ -462,7 +462,7 @@ const allTours = [
       "Selous Game Reserve/Nyerere National Park",
       "Stone Town",
     ],
-    price: "From €1,582 per person",
+    price: "From $1,867 per person",
     image: "/images/wildlife/lion-grassland.jpeg",
   },
   {
@@ -477,7 +477,7 @@ const allTours = [
       "Stone Town",
       "Zanzibar",
     ],
-    price: "From €1,192 per person",
+    price: "From $1,407 per person",
     image: "/images/wildlife/safari-guide-vehicle.jpeg",
   },
   {
@@ -492,7 +492,7 @@ const allTours = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From €1,126 per person",
+    price: "From $1,329 per person",
     image: "/images/wildlife/safari-salt-lake.jpeg",
   },
   {
@@ -507,7 +507,7 @@ const allTours = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From €897 per person",
+    price: "From $1,058 per person",
     image: "/images/wildlife/elephant-encounter.jpeg",
   },
   {
@@ -516,7 +516,7 @@ const allTours = [
     description:
       "Experience an unforgettable two-day safari adventure in the Selous Game Reserve/Nyerere National Park. This tour is packed with activities to make the most of your short stay.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From €729 per person",
+    price: "From $860 per person",
     image: "/images/wildlife/lioness-tree.jpeg",
   },
   {
@@ -525,7 +525,7 @@ const allTours = [
     description:
       "Want to enhance your stay in Zanzibar with a true Tanzanian safari experience? Book this day trip for a thrilling encounter with the wild and a break from the beach.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From €557 per person",
+    price: "From $657 per person",
     image: "/images/wildlife/safari-baobab.jpeg",
   },
   {
@@ -540,7 +540,7 @@ const allTours = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From €3,650 per person",
+    price: "From $4,307 per person",
     image: "/images/wildlife/baboons-road.jpeg",
   },
   {
@@ -555,12 +555,17 @@ const allTours = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From €4,095 per person",
+    price: "From $4,832 per person",
     image: "/images/wildlife/lion-grassland.jpeg",
   },
 ]
 
 export default function ToursClient() {
+  const generateWhatsAppLink = (tourTitle: string) => {
+    const message = `Hi! I'm interested in booking the ${tourTitle} safari tour. Please send me more details.`
+    return `https://wa.me/255762756046?text=${encodeURIComponent(message)}`
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -608,7 +613,7 @@ export default function ToursClient() {
                 <div className="w-full lg:w-1/2 space-y-6">
                   <div>
                     <h2 className="text-3xl font-bold text-[#473a30] mb-2">{tour.title}</h2>
-                    <div className="flex items-center text-[#f9b804] mb-4">
+                    <div className="flex items-center text-gray-600 mb-4">
                       <MapPin className="w-4 h-4 mr-2" />
                       <span className="text-sm">{tour.location}</span>
                     </div>
@@ -632,8 +637,8 @@ export default function ToursClient() {
                       <p className="text-2xl font-bold text-[#473a30]">{tour.price}</p>
                     </div>
                     <Button
-                      className="bg-[#f9b804] hover:bg-[#ec6417] text-white px-8 py-3 rounded-full font-semibold"
-                      onClick={() => window.open("https://wa.me/255123456789", "_blank")}
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] px-8 py-3 rounded-full font-semibold"
+                      onClick={() => window.open(generateWhatsAppLink(tour.title), "_blank")}
                     >
                       BOOK NOW
                     </Button>

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { MapPin } from "lucide-react"
 
-// <CHANGE> Complete tour data from text file with all 38+ tours
+// Complete tour data from text file with all 38+ tours
 const allTours = [
   {
     title: "15 Days | Northern Tanzania & Zanzibar",
@@ -559,7 +559,7 @@ export default function ToursClientPage() {
                 <div className="w-full lg:w-1/2 space-y-6">
                   <div>
                     <h2 className="text-3xl font-bold text-[#473a30] mb-2">{tour.title}</h2>
-                    <div className="flex items-center text-[#f9b804] mb-4">
+                    <div className="flex items-center text-gray-600 mb-4">
                       <MapPin className="w-4 h-4 mr-2" />
                       <span className="text-sm">{tour.location}</span>
                     </div>
@@ -583,7 +583,7 @@ export default function ToursClientPage() {
                       <p className="text-2xl font-bold text-[#473a30]">{tour.price}</p>
                     </div>
                     <Button
-                      className="bg-[#f9b804] hover:bg-[#ec6417] text-white px-8 py-3 rounded-full font-semibold"
+                      className="bg-[#473a30] hover:bg-[#ec6417] text-white px-8 py-3 rounded-full font-semibold"
                       onClick={() => window.open("https://wa.me/255123456789", "_blank")}
                     >
                       BOOK NOW

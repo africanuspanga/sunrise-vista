@@ -2,9 +2,35 @@ import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Serengeti National Park Safari | Kachiki Safaris Tanzania",
+  title: "Serengeti Safari Tanzania | Great Migration & Big Five | Kachiki Safaris",
   description:
-    "Experience the Great Migration and Big Five wildlife in Serengeti National Park. Book your unforgettable Tanzania safari adventure with Kachiki Safaris - expert guides and authentic experiences.",
+    "Experience the legendary Serengeti National Park with Kachiki Safaris. Witness the Great Migration, spot the Big Five, and explore endless plains with expert guides.",
+  keywords:
+    "Serengeti safari, Great Migration Tanzania, Big Five Serengeti, Serengeti National Park, wildebeest migration, Tanzania wildlife safari, Serengeti tours",
+  openGraph: {
+    title: "Serengeti Safari Tanzania | Great Migration & Big Five",
+    description: "Experience the legendary Serengeti National Park with expert guides from Kachiki Safaris.",
+    url: "https://www.kachikisafaris.com/serengeti",
+    siteName: "Kachiki Safaris",
+    type: "website",
+    images: [
+      {
+        url: "/serengeti-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Serengeti Safari - Great Migration and Wildlife",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Serengeti Safari Tanzania",
+    description: "Experience the legendary Serengeti National Park with expert guides and witness the Great Migration.",
+    images: ["/serengeti-twitter.jpg"],
+  },
+  alternates: {
+    canonical: "/serengeti",
+  },
 }
 
 export default function SerengetiPage() {
@@ -24,7 +50,7 @@ export default function SerengetiPage() {
           <p className="text-xl md:text-2xl mb-8 text-shadow">
             Endless plains, the Great Migration, and Africa's Big Five.
           </p>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3 text-lg">
+          <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full px-8 py-3 text-lg">
             Book Your Serengeti Safari Today
           </Button>
         </div>
@@ -206,7 +232,7 @@ export default function SerengetiPage() {
           <p className="text-xl mb-8 text-amber-100" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.8)" }}>
             Join Kachiki Safaris for a journey through the heart of the wild.
           </p>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-8 py-3 text-lg">
+          <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full px-8 py-3 text-lg">
             Book Your Serengeti Safari Today
           </Button>
         </div>

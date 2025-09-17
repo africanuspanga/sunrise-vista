@@ -161,7 +161,7 @@ export default function ZanzibarPage() {
           >
             From pristine beaches to rich cultural heritage, Zanzibar offers unforgettable experiences.
           </p>
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 md:px-8 py-2 md:py-3 text-base md:text-lg">
+          <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full px-6 md:px-8 py-2 md:py-3 text-base md:text-lg">
             Book Your Zanzibar Adventure
           </Button>
         </div>

@@ -1,3 +1,21 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Southern Circuit Safari Tanzania | Mikumi, Ruaha & Nyerere | Kachiki Safaris",
+  description:
+    "Explore Tanzania's hidden safari gems in the Southern Circuit. Discover Mikumi, Ruaha, Nyerere (Selous), and Saadani National Parks with Kachiki Safaris expert guides.",
+  keywords:
+    "Southern Circuit Tanzania, Mikumi National Park, Ruaha safari, Nyerere National Park, Selous Game Reserve, Saadani National Park, southern Tanzania safari",
+  openGraph: {
+    title: "Southern Circuit Safari Tanzania | Mikumi, Ruaha & Nyerere",
+    description:
+      "Explore Tanzania's hidden safari gems in the Southern Circuit with expert guides from Kachiki Safaris.",
+    url: "https://www.kachikisafaris.com/safaris/southern-circuit",
+    siteName: "Kachiki Safaris",
+    type: "website",
+  },
+}
+
 export default function SouthernCircuitPage() {
   return (
     <div className="min-h-screen bg-orange-50">
@@ -58,7 +76,7 @@ export default function SouthernCircuitPage() {
                 <p className="text-[#473a30] font-medium mb-4">
                   Make Mikumi part of your adventure with Kachiki Safaris.
                 </p>
-                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3 rounded-lg font-semibold transition-colors">
                   Explore Mikumi
                 </button>
               </div>
@@ -122,7 +140,7 @@ export default function SouthernCircuitPage() {
                 <p className="text-[#473a30] font-medium mb-4">
                   Explore the wild heart of Nyerere with Kachiki Safaris.
                 </p>
-                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3 rounded-lg font-semibold transition-colors">
                   Discover Nyerere
                 </button>
               </div>
@@ -168,7 +186,7 @@ export default function SouthernCircuitPage() {
                 </div>
 
                 <p className="text-[#473a30] font-medium mb-4">Venture into Ruaha's wilderness with Kachiki Safaris.</p>
-                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3 rounded-lg font-semibold transition-colors">
                   Venture to Ruaha
                 </button>
               </div>
@@ -234,7 +252,7 @@ export default function SouthernCircuitPage() {
                 <p className="text-[#473a30] font-medium mb-4">
                   Experience Africa's unique bush-to-beach safari with Kachiki Safaris.
                 </p>
-                <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3 rounded-lg font-semibold transition-colors">
                   Experience Saadani
                 </button>
               </div>
@@ -251,7 +269,7 @@ export default function SouthernCircuitPage() {
             Discover the hidden gems of southern Tanzania with Kachiki Safaris. From accessible Mikumi to remote Ruaha,
             experience authentic African wilderness.
           </p>
-          <button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-12 py-4 rounded-lg font-semibold text-lg transition-colors">
+          <button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-12 py-4 rounded-lg font-semibold text-lg transition-colors">
             Plan Your Southern Safari
           </button>
         </div>

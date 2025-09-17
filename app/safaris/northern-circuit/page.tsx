@@ -3,9 +3,35 @@ import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Northern Circuit Safari Tanzania | Ngorongoro Crater & Serengeti | Kachiki Safaris",
+  title: "Northern Circuit Safari Tanzania | Serengeti, Ngorongoro, Tarangire | Kachiki Safaris",
   description:
-    "Explore Tanzania's Northern Circuit - Ngorongoro Crater, Lake Manyara, Tarangire, and more. Experience the Big Five and Great Migration with Kachiki Safaris expert guides.",
+    "Explore Tanzania's famous Northern Circuit with Kachiki Safaris. Visit Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara National Parks with expert guides and luxury accommodations.",
+  keywords:
+    "Northern Circuit Tanzania, Serengeti safari, Ngorongoro Crater tour, Tarangire National Park, Lake Manyara safari, Big Five Tanzania, Great Migration safari",
+  openGraph: {
+    title: "Northern Circuit Safari Tanzania | Serengeti, Ngorongoro, Tarangire",
+    description: "Explore Tanzania's famous Northern Circuit with expert guides from Kachiki Safaris.",
+    url: "https://www.kachikisafaris.com/safaris/northern-circuit",
+    siteName: "Kachiki Safaris",
+    type: "website",
+    images: [
+      {
+        url: "/northern-circuit-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Northern Circuit Safari - Serengeti and Ngorongoro Crater",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Northern Circuit Safari Tanzania",
+    description: "Explore Tanzania's famous Northern Circuit with expert guides and luxury accommodations.",
+    images: ["/northern-circuit-twitter.jpg"],
+  },
+  alternates: {
+    canonical: "/safaris/northern-circuit",
+  },
 }
 
 export default function NorthernCircuitPage() {
@@ -72,7 +98,7 @@ export default function NorthernCircuitPage() {
                   </ul>
                 </div>
 
-                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
+                <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3">
                   Plan your Ngorongoro Safari with Kachiki Safaris today
                 </Button>
               </div>
@@ -135,7 +161,7 @@ export default function NorthernCircuitPage() {
                   </ul>
                 </div>
 
-                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
+                <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3">
                   Discover the magic of Lake Manyara with Kachiki Safaris
                 </Button>
               </div>
@@ -183,7 +209,7 @@ export default function NorthernCircuitPage() {
                   </ul>
                 </div>
 
-                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
+                <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3">
                   Experience Tarangire's wild beauty with Kachiki Safaris
                 </Button>
               </div>
@@ -246,7 +272,7 @@ export default function NorthernCircuitPage() {
                   </ul>
                 </div>
 
-                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3">
+                <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3">
                   Explore the wonders of Lake Natron with Kachiki Safaris
                 </Button>
               </div>
@@ -296,7 +322,7 @@ export default function NorthernCircuitPage() {
                   </ul>
                 </div>
 
-                <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-4 text-lg">
+                <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
                   Discover Arusha's hidden gem with Kachiki Safaris
                 </Button>
               </div>
@@ -323,7 +349,8 @@ export default function NorthernCircuitPage() {
               Discover the iconic wildlife destinations of northern Tanzania with Kachiki Safaris. From the legendary
               Ngorongoro Crater to the elephant paradise of Tarangire, experience the very best of African wilderness.
             </p>
-            <Button className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
+
+            <Button className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
               Start Your Northern Circuit Adventure
             </Button>
           </div>

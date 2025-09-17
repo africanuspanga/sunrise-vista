@@ -3,18 +3,47 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Users, MapPin, Award, Clock } from "lucide-react"
+import type { Metadata } from "next"
+import { OptimizedImage } from "@/components/ui/image-optimized"
+import { LazySection } from "@/components/performance/lazy-section"
+import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Kachiki Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
+  description:
+    "Experience authentic Tanzania safari adventures with Kachiki Safaris. Explore Serengeti, Ngorongoro Crater, Tarangire, and Zanzibar. Expert guides, luxury accommodations, and unforgettable wildlife encounters await.",
+  keywords:
+    "Tanzania safari, Serengeti tours, Ngorongoro Crater, Zanzibar holidays, African safari, wildlife tours, Big Five safari, Great Migration, Tanzania travel",
+  openGraph: {
+    title: "Kachiki Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
+    description:
+      "Experience authentic Tanzania safari adventures with Kachiki Safaris. Explore Serengeti, Ngorongoro Crater, Tarangire, and Zanzibar.",
+    url: "https://www.kachikisafaris.com",
+    siteName: "Kachiki Safaris",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kachiki Safaris - Tanzania Safari Tours",
+    description: "Experience authentic Tanzania safari adventures with expert guides and luxury accommodations.",
+  },
+}
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-orange-50">
       {/* Hero Section */}
       <section className="relative h-[600px] bg-gradient-to-r from-[#473a30] to-[#ec6417] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/closeup-shot-african-leopard.jpg-eNNYy3qVkR8shzkdRn2FsJxxwGRzfw.jpeg')`,
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/closeup-shot-african-leopard.jpg-eNNYy3qVkR8shzkdRn2FsJxxwGRzfw.jpeg"
+            alt="African leopard in natural habitat - Kachiki Safaris Tanzania"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl text-white">
@@ -63,9 +92,11 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="h-96 rounded-lg overflow-hidden">
-                <img
+                <OptimizedImage
                   src="/images/about-safari.jpeg"
                   alt="Safari vehicle with elephant in natural habitat"
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -74,287 +105,319 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Tours Section */}
-      <section className="py-16 bg-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#473a30] mb-4">Featured Safari Tours</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Handpicked experiences showcasing the best of Tanzania's wildlife, landscapes, and culture
-            </p>
+      <LazySection>
+        {/* Featured Tours Section */}
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#473a30] mb-4">Featured Safari Tours</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Handpicked experiences showcasing the best of Tanzania's wildlife, landscapes, and culture
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Tour 1 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/elephant-tusks.jpeg"
+                    alt="Northern Tanzania & Zanzibar Tour"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-[#f9b804] text-[#473a30]">Premium</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">15 Days | Northern Tanzania & Zanzibar</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Ultimate Tanzania experience combining wildlife-rich northern parks with stunning Zanzibar beaches.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>15 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-8 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $3,507</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 15 Days Northern Tanzania & Zanzibar safari tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Tour 2 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/lioness-drinking.jpeg"
+                    alt="Wildlife & White Beaches Tour"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-green-100 text-green-800">Popular</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">11 Days | Wildlife & White Beaches</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Perfect blend of safari adventure and beach relaxation in northern Tanzania and Zanzibar.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>11 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-8 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $3,161</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 11 Days Wildlife & White Beaches safari tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Tour 3 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/rhino-habitat.jpeg"
+                    alt="Complete Northern Circuit Tour"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-[#ec6417] text-white">Adventure</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">13 Days | Complete Northern Circuit</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Ultimate safari experience through the heart of African wilderness and all major northern parks.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>13 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-8 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $3,584</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 13 Days Complete Northern Circuit safari tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Tour 4 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/safari-guide-elephants.jpeg"
+                    alt="Great Migration Safari"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-purple-100 text-purple-800">Seasonal</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">8 Days | Great Migration Safari</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Witness the spectacular wildebeest migration across the Serengeti plains with expert guides.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>8 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-6 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $2,891</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 8 Days Great Migration Safari tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Tour 5 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/giraffes-balloon.jpeg"
+                    alt="Balloon Safari Adventure"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-blue-100 text-blue-800">Unique</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">6 Days | Balloon Safari Adventure</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Experience Tanzania from above with hot air balloon safaris over the Serengeti and Ngorongoro.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>6 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-4 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $4,543</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 6 Days Balloon Safari Adventure tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Tour 6 */}
+              <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
+                <div className="relative">
+                  <OptimizedImage
+                    src="/images/wildlife/tourist-elephants.jpeg"
+                    alt="Photography Safari"
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-yellow-100 text-yellow-800">Photography</Badge>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#473a30] mb-2">10 Days | Photography Safari</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    Specialized photography safari with professional guides and optimal timing for wildlife shots.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>10 Days</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      <span>2-6 people</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-[#473a30]">From $3,410</p>
+                      <p className="text-sm text-gray-500">per person</p>
+                    </div>
+                    <Button
+                      asChild
+                      className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
+                    >
+                      <a
+                        href="https://wa.me/255762756046?text=Hi! I'm interested in booking the 10 Days Photography Safari tour. Please send me more details."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        BOOK NOW
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full px-8 font-semibold"
+              >
+                <Link href="/tours">View All Tours</Link>
+              </Button>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tour 1 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/elephant-tusks.jpeg"
-                  alt="Northern Tanzania & Zanzibar Tour"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-[#f9b804] text-[#473a30]">Premium</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">15 Days | Northern Tanzania & Zanzibar</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Ultimate Tanzania experience combining wildlife-rich northern parks with stunning Zanzibar beaches.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>15 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-8 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €2,972</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 15 Days Northern Tanzania & Zanzibar tour"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Tour 2 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/lioness-drinking.jpeg"
-                  alt="Wildlife & White Beaches Tour"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-green-100 text-green-800">Popular</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">11 Days | Wildlife & White Beaches</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Perfect blend of safari adventure and beach relaxation in northern Tanzania and Zanzibar.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>11 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-8 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €2,679</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 11 Days Wildlife & White Beaches tour"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Tour 3 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/rhino-habitat.jpeg"
-                  alt="Complete Northern Circuit Tour"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-[#ec6417] text-white">Adventure</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">13 Days | Complete Northern Circuit</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Ultimate safari experience through the heart of African wilderness and all major northern parks.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>13 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-8 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €3,037</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 13 Days Complete Northern Circuit tour"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Tour 4 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/safari-guide-elephants.jpeg"
-                  alt="Great Migration Safari"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-purple-100 text-purple-800">Seasonal</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">8 Days | Great Migration Safari</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Witness the spectacular wildebeest migration across the Serengeti plains with expert guides.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>8 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-6 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €2,450</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 8 Days Great Migration Safari"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Tour 5 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/giraffes-balloon.jpeg"
-                  alt="Balloon Safari Adventure"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-blue-100 text-blue-800">Unique</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">6 Days | Balloon Safari Adventure</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Experience Tanzania from above with hot air balloon safaris over the Serengeti and Ngorongoro.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>6 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-4 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €3,850</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 6 Days Balloon Safari Adventure"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Tour 6 */}
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-              <div className="relative">
-                <img
-                  src="/images/wildlife/tourist-elephants.jpeg"
-                  alt="Photography Safari"
-                  className="w-full h-48 object-cover"
-                />
-                <Badge className="absolute top-4 left-4 bg-yellow-100 text-yellow-800">Photography</Badge>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-[#473a30] mb-2">10 Days | Photography Safari</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  Specialized photography safari with professional guides and optimal timing for wildlife shots.
-                </p>
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    <span>10 Days</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    <span>2-6 people</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-2xl font-bold text-[#473a30]">From €2,890</p>
-                    <p className="text-sm text-gray-500">per person</p>
-                  </div>
-                  <Button asChild className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold">
-                    <a
-                      href="https://wa.me/255123456789?text=Hi, I'm interested in the 10 Days Photography Safari"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      BOOK NOW
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full px-8 font-semibold"
-            >
-              <Link href="/tours">View All Tours</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </LazySection>
 
       {/* Popular Tours Section */}
       {/* Featured Tours Section */}
@@ -528,7 +591,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full px-8 font-semibold"
+              className="bg-[#473a30] hover:bg-[#ec6417] text-white rounded-full px-8 font-semibold"
             >
               <Link href="/accommodations">View All Accommodations</Link>
             </Button>
@@ -568,7 +631,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/safaris/northern-circuit">Explore Destination</Link>
                 </Button>
@@ -597,7 +660,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/safaris/northern-circuit">Explore Destination</Link>
                 </Button>
@@ -610,7 +673,7 @@ export default function HomePage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1215494886-612x612.jpg-SfFg26BOdaKUexxTsH8xPhebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1215494886-612x612.jpg-SfFg26BOdaKUexxTsH8xP8yfNQmoPk.jpeg')`,
+                    backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/istockphoto-1215494886-612x612.jpg-SfFg26BOdaKUexxTsH8xP8yfNQmoPk.jpeg')`,
                   }}
                 />
               </div>
@@ -626,7 +689,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/safaris/northern-circuit">Explore Destination</Link>
                 </Button>
@@ -655,7 +718,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/safaris/northern-circuit">Explore Destination</Link>
                 </Button>
@@ -684,7 +747,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/safaris/northern-circuit">Explore Destination</Link>
                 </Button>
@@ -711,7 +774,7 @@ export default function HomePage() {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
+                  className="w-full bg-[#f9b804] hover:bg-[#e6a503] text-[#473a30] rounded-full font-semibold"
                 >
                   <Link href="/serengeti">Explore Destination</Link>
                 </Button>
@@ -738,11 +801,7 @@ export default function HomePage() {
             With decades of experience and deep local knowledge, Kachiki Safaris creates unforgettable adventures that
             connect you with the heart of East Africa's natural wonders.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
-          >
+          <Button asChild size="lg" className="bg-[#473a30] hover:bg-[#ec6417] text-white rounded-full font-semibold">
             <Link href="/about">More about us</Link>
           </Button>
         </div>
@@ -926,7 +985,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card className="bg-black/20 backdrop-blur-sm border-0 rounded-2xl overflow-hidden">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 border-2 rounded-2xl overflow-hidden shadow-xl">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -935,8 +994,7 @@ export default function HomePage() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-black/70" />
-                <div className="absolute bottom-4 left-4 bg-black px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold text-white" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                     Lion
                   </h3>
@@ -944,7 +1002,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="bg-black/20 backdrop-blur-sm border-0 rounded-2xl overflow-hidden">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 border-2 rounded-2xl overflow-hidden shadow-xl">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -953,8 +1011,7 @@ export default function HomePage() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-black/70" />
-                <div className="absolute bottom-4 left-4 bg-black px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold text-white" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                     Leopard
                   </h3>
@@ -962,7 +1019,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="bg-black/20 backdrop-blur-sm border-0 rounded-2xl overflow-hidden">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 border-2 rounded-2xl overflow-hidden shadow-xl">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -971,8 +1028,7 @@ export default function HomePage() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-black/70" />
-                <div className="absolute bottom-4 left-4 bg-black px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold text-white" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                     Elephant
                   </h3>
@@ -980,7 +1036,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="bg-black/20 backdrop-blur-sm border-0 rounded-2xl overflow-hidden">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 border-2 rounded-2xl overflow-hidden shadow-xl">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -989,8 +1045,7 @@ export default function HomePage() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-black/70" />
-                <div className="absolute bottom-4 left-4 bg-black px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold text-white" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>
                     Rhino
                   </h3>
@@ -1007,11 +1062,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-[#473a30] mb-6">
             Ready to start your Tanzanian adventure?
           </h2>
-          <Button
-            asChild
-            size="lg"
-            className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] rounded-full font-semibold"
-          >
+          <Button asChild size="lg" className="bg-[#473a30] hover:bg-[#ec6417] text-white rounded-full font-semibold">
             <Link href="/contact">Plan Your Safari Today</Link>
           </Button>
         </div>

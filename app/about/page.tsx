@@ -2,6 +2,23 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Award, MapPin, Heart } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Kachiki Safaris - Your Trusted Tanzania Safari Partner",
+  description:
+    "Learn about Kachiki Safaris, your trusted partner for authentic Tanzanian adventures. Based in Arusha with expert guides, we specialize in responsible tourism and wildlife conservation.",
+  keywords:
+    "about Kachiki Safaris, Tanzania safari company, Arusha safari guides, responsible tourism Tanzania, wildlife conservation",
+  openGraph: {
+    title: "About Kachiki Safaris - Your Trusted Tanzania Safari Partner",
+    description:
+      "Learn about Kachiki Safaris, your trusted partner for authentic Tanzanian adventures with expert guides and responsible tourism practices.",
+    url: "https://www.kachikisafaris.com/about",
+    siteName: "Kachiki Safaris",
+    type: "website",
+  },
+}
 
 export default function AboutPage() {
   return (
@@ -138,7 +155,7 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#ec6417] hover:bg-[#f9b804] text-white px-8 py-3 text-lg rounded-full"
+                className="bg-[#f9b804] hover:bg-[#ec6417] text-[#473a30] px-8 py-3 text-lg rounded-full"
               >
                 <Link href="/contact">Start Planning Your Safari</Link>
               </Button>
