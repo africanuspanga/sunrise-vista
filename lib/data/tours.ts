@@ -1,17 +1,59 @@
-"use client"
+export type Tour = {
+  title: string
+  location: string
+  description: string
+  highlights: string[]
+  price: string
+  image: string
+}
 
-import { Button } from "@/components/ui/button"
-import { MapPin } from "lucide-react"
+export type TourCategory = "all" | "safari-beach" | "northern" | "southern" | "group" | "short"
 
-// Complete tour data from text file with all 38+ tours
-const allTours = [
+export const tourCategories: { id: TourCategory; label: string }[] = [
+  { id: "all", label: "All Tours" },
+  { id: "safari-beach", label: "Safari & Zanzibar" },
+  { id: "northern", label: "Northern Circuit" },
+  { id: "southern", label: "Southern & Selous" },
+  { id: "group", label: "Group & Shared" },
+  { id: "short", label: "Short Safaris" },
+]
+
+export function tourDays(tour: Tour) {
+  const match = tour.title.match(/^(\d+) Days?/)
+  return match ? Number(match[1]) : 1
+}
+
+export function tourInCategory(tour: Tour, category: TourCategory) {
+  switch (category) {
+    case "all":
+      return true
+    case "safari-beach":
+      return tour.location.includes("Zanzibar")
+    case "northern":
+      return !tour.location.includes("Zanzibar") && !tour.location.includes("Selous")
+    case "southern":
+      return tour.location.includes("Selous")
+    case "group":
+      return /Group Tour|Shared Safari/.test(tour.title)
+    case "short":
+      return tourDays(tour) <= 4
+  }
+}
+
+// "From $3,507 per person" -> "$3,507"
+export function tourPrice(tour: Pick<Tour, "price">) {
+  return tour.price.replace(/^From\s+/, "").replace(/\s+per person$/, "")
+}
+
+export const allTours: Tour[] = [
   {
     title: "15 Days | Northern Tanzania & Zanzibar",
     location: "Northern Tanzania & Zanzibar",
     description:
       "This tour is for the ultimate Tanzania experience. It's perfect if you want to see all the highlights, from the wildlife-rich northern parks to the stunning beaches of Zanzibar, all in one comprehensive 15-day journey.",
     highlights: ["Arusha National Park", "Boat Safari", "Game Drive", "Lake Manyara National Park", "Lake Natron"],
-    price: "From €2,972 per person",
+    price: "From $3,507 per person",
+    image: "/images/wildlife/elephant-tusks.jpeg",
   },
   {
     title: "11 Days | Wildlife & White Beaches",
@@ -26,7 +68,8 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,679 per person",
+    price: "From $3,161 per person",
+    image: "/images/wildlife/lioness-drinking.jpeg",
   },
   {
     title: "11 Days | Wilderness & Paradise",
@@ -41,7 +84,8 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,112 per person",
+    price: "From $2,492 per person",
+    image: "/images/wildlife/zebras-grazing.jpeg",
   },
   {
     title: "10 Days | Northern Tanzania & Zanzibar",
@@ -56,7 +100,8 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,233 per person",
+    price: "From $2,635 per person",
+    image: "/images/wildlife/rhino-habitat.jpeg",
   },
   {
     title: "8 Days | Northern Tanzania & Zanzibar",
@@ -71,7 +116,8 @@ const allTours = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From €2,218 per person",
+    price: "From $2,617 per person",
+    image: "/images/wildlife/elephant-mountains.jpeg",
   },
   {
     title: "8 Days | Zanzibar & Serengeti NP",
@@ -86,7 +132,8 @@ const allTours = [
       "Walking Safari",
       "Zanzibar",
     ],
-    price: "From €2,137 per person",
+    price: "From $2,522 per person",
+    image: "/images/wildlife/leopard-tree.png",
   },
   {
     title: "10 Days | National Parks in Northern Tanzania & Zanzibar",
@@ -94,7 +141,8 @@ const allTours = [
     description:
       "Discover the enchanting customs and traditions of Tanzania on this inspiring tour. You'll visit several of the country's national parks before concluding your trip on the beautiful island of Zanzibar.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From €1,689 per person",
+    price: "From $1,993 per person",
+    image: "/images/wildlife/cheetah-cub.png",
   },
   {
     title: "8 Days | Zanzibar & Lake Manyara",
@@ -102,7 +150,8 @@ const allTours = [
     description:
       "This fascinating tour starts in the historic town of Stone Town, where you can explore its narrow streets and rich history, before continuing on to the natural beauty of Lake Manyara.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From €1,671 per person",
+    price: "From $1,972 per person",
+    image: "/images/wildlife/lion-pride.jpeg",
   },
   {
     title: "13 Days | Complete Northern Circuit",
@@ -117,7 +166,8 @@ const allTours = [
       "Tarangire National Park",
       "Walking Safari",
     ],
-    price: "From €3,037 per person",
+    price: "From $3,584 per person",
+    image: "/images/wildlife/lion-rock.jpeg",
   },
   {
     title: "12 Days | Complete Northern Circuit",
@@ -132,7 +182,8 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,980 per person",
+    price: "From $3,516 per person",
+    image: "/images/wildlife/bat-eared-foxes.webp",
   },
   {
     title: "14 Days | The Best of the Northern Circuit & Zanzibar",
@@ -147,7 +198,8 @@ const allTours = [
       "Pololeti Game Reserve",
       "Serengeti National Park",
     ],
-    price: "From €2,865 per person",
+    price: "From $3,381 per person",
+    image: "/images/wildlife/safari-guide-elephants.jpeg",
   },
   {
     title: "11 Days | Complete Northern Circuit",
@@ -162,7 +214,8 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,345 per person",
+    price: "From $2,767 per person",
+    image: "/images/wildlife/rhino-sunset.jpeg",
   },
   {
     title: "11 Days | Endless Plains",
@@ -177,7 +230,8 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,323 per person",
+    price: "From $2,741 per person",
+    image: "/images/wildlife/giraffes-balloon.jpeg",
   },
   {
     title: "11 Days | Crazy Tanzania",
@@ -192,7 +246,8 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,221 per person",
+    price: "From $2,621 per person",
+    image: "/images/wildlife/tourist-elephants.jpeg",
   },
   {
     title: "11 Days | Tanzania Classics",
@@ -207,7 +262,8 @@ const allTours = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From €2,470 per person",
+    price: "From $2,915 per person",
+    image: "/images/wildlife/elephant-herd-savanna.jpeg",
   },
   {
     title: "11 Days | Lake Hopping",
@@ -222,10 +278,11 @@ const allTours = [
       "Game Drive",
       "Lake Manyara National Park",
     ],
-    price: "From €2,281 per person",
+    price: "From $2,692 per person",
+    image: "/images/wildlife/wildebeest-migration.jpeg",
   },
   {
-    title: "10 Days | Highlights Noord-Tanzania",
+    title: "10 Days | Highlights of Northern Tanzania",
     location: "Northern Tanzania",
     description:
       "Join an extraordinary safari through the diverse regions of Northern Tanzania. This trip focuses on hitting the major highlights, ensuring you don't miss any of the must-see spots.",
@@ -237,10 +294,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Night Game Drive",
     ],
-    price: "From €2,415 per person",
+    price: "From $2,850 per person",
+    image: "/images/wildlife/lion-feeding.jpeg",
   },
   {
-    title: "9 Days | Highlights Noord-Tanzania",
+    title: "9 Days | Highlights of Northern Tanzania",
     location: "Northern Tanzania",
     description:
       "Embark on a great safari through Northern Tanzania, where the wild heart of Africa beats. This trip is designed to give you a powerful taste of the wilderness and its most iconic locations.",
@@ -252,10 +310,11 @@ const allTours = [
       "Game Drive",
       "Lake Natron",
     ],
-    price: "From €2,450 per person",
+    price: "From $2,891 per person",
+    image: "/images/wildlife/tourist-giraffe.jpeg",
   },
   {
-    title: "8 Days | Compleet Noordelijk Circuit",
+    title: "8 Days | Complete Northern Circuit",
     location: "Northern Tanzania",
     description:
       "With this unforgettable safari, you'll discover the diverse landscapes and iconic destinations of Northern Tanzania. It's a comprehensive tour that packs a lot of adventure into just eight days.",
@@ -267,10 +326,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Pololeti Game Reserve",
     ],
-    price: "From €2,345 per person",
+    price: "From $2,767 per person",
+    image: "/images/wildlife/cheetah-family.jpeg",
   },
   {
-    title: "7 Days | Compleet Noordelijk Circuit",
+    title: "7 Days | Complete Northern Circuit",
     location: "Northern Tanzania",
     description:
       "Join this enchanting safari adventure through the raw and beautiful landscapes of Northern Tanzania. The trip is designed to showcase the authentic beauty of the region in a shorter time frame.",
@@ -282,10 +342,11 @@ const allTours = [
       "Lake Natron",
       "Maasai Boma",
     ],
-    price: "From €1,788 per person",
+    price: "From $2,110 per person",
+    image: "/images/wildlife/safari-vehicle-elephant.jpeg",
   },
   {
-    title: "6 Days | Highlights Noord-Tanzania",
+    title: "6 Days | Highlights of Northern Tanzania",
     location: "Northern Tanzania",
     description:
       "This six-day safari adventure lets you discover the best of the northern parks in a single tour. You'll be amazed by the incredible sights and sounds of the wild.",
@@ -296,10 +357,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Serengeti National Park",
     ],
-    price: "From €1,550 per person",
+    price: "From $1,829 per person",
+    image: "/images/wildlife/hippos-water.jpeg",
   },
   {
-    title: "5 Days | Highlights van Noord-Tanzania",
+    title: "5 Days | Highlights of Northern Tanzania",
     location: "Northern Tanzania",
     description:
       "This safari trip lets you experience all the highlights of Northern Tanzania in just five days. If you're ready for an action-packed, short trip, this one's for you.",
@@ -310,10 +372,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,497 per person",
+    price: "From $1,766 per person",
+    image: "/images/wildlife/buffalo-bird.jpeg",
   },
   {
-    title: "4 Days | Cultuur & Safari",
+    title: "4 Days | Culture & Safari",
     location: "Northern Tanzania",
     description:
       "Discover the treasures of Northern Tanzania during this four-day tour. Don't forget your binoculars and camera as you'll be immersed in both the culture and the wildlife of the region.",
@@ -325,10 +388,11 @@ const allTours = [
       "Lake Manyara National Park",
       "Maasai Boma",
     ],
-    price: "From €837 per person",
+    price: "From $988 per person",
+    image: "/images/wildlife/wildebeest-crossing.jpeg",
   },
   {
-    title: "4 Days | De Serengeti Ervaring",
+    title: "4 Days | The Serengeti Experience",
     location: "Serengeti National Park",
     description:
       "Prepare for an unforgettable journey to the heart of Serengeti National Park. Every moment of this tour promises an incredible experience, from spotting wildlife to enjoying the vast landscapes.",
@@ -339,7 +403,8 @@ const allTours = [
       "Game Drive",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,810 per person",
+    price: "From $2,136 per person",
+    image: "/images/wildlife/safari-zebras.jpeg",
   },
   {
     title: "4 Days | Classic Drive Serengeti",
@@ -353,10 +418,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,240 per person",
+    price: "From $1,463 per person",
+    image: "/images/wildlife/african-sunset.jpeg",
   },
   {
-    title: "6 Days | Serengeti en meer | Shared Safari",
+    title: "6 Days | Serengeti & More | Shared Safari",
     location: "Northern Tanzania",
     description:
       "If you dream of seeing elephants, lions, giraffes, and maybe even a leopard, this shared safari is for you. Travel with a group and experience the thrill of the wild together.",
@@ -367,10 +433,11 @@ const allTours = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From €1,550 per person",
+    price: "From $1,829 per person",
+    image: "/images/wildlife/zebras-closeup.jpeg",
   },
   {
-    title: "4 Days | Noord Tanzania | Shared Safari",
+    title: "4 Days | Northern Tanzania | Shared Safari",
     location: "Northern Tanzania",
     description:
       "This shared safari is perfect for those who have a long-held dream of spotting incredible wildlife. Join a group and explore the best of Northern Tanzania.",
@@ -381,7 +448,8 @@ const allTours = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From €895 per person",
+    price: "From $1,056 per person",
+    image: "/images/wildlife/giraffe-portrait.jpeg",
   },
   {
     title: "3 Days | Classic Drive Safari",
@@ -395,15 +463,17 @@ const allTours = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From €617 per person",
+    price: "From $728 per person",
+    image: "/images/wildlife/colorful-bird.jpeg",
   },
   {
-    title: "2 Days | Tarangire & Ngorongoro Krater",
+    title: "2 Days | Tarangire & Ngorongoro Crater",
     location: "Northern Tanzania",
     description:
       "Experience an exciting two-day safari adventure in Tarangire National Park and the famous Ngorongoro Crater. It's the perfect option for a quick, impactful safari trip.",
     highlights: ["Tarangire National Park", "Game Drive", "Ngorongoro Crater", "Safari Jeep with Pop-up Roof"],
-    price: "From €427 per person",
+    price: "From $504 per person",
+    image: "/images/wildlife/aerial-landscape.jpeg",
   },
   {
     title: "13 Days | Zanzibar & Selous Game Reserve",
@@ -418,7 +488,8 @@ const allTours = [
       "Bush Walk",
       "Game Drive",
     ],
-    price: "From €1,920 per person",
+    price: "From $2,266 per person",
+    image: "/images/wildlife/elephants-waterhole.jpeg",
   },
   {
     title: "10 Days | Zanzibar & Selous Game Reserve",
@@ -433,7 +504,8 @@ const allTours = [
       "Selous Game Reserve/Nyerere National Park",
       "Stone Town",
     ],
-    price: "From €1,582 per person",
+    price: "From $1,867 per person",
+    image: "/images/wildlife/lion-grassland.jpeg",
   },
   {
     title: "7 Days | Zanzibar & Selous Game Reserve",
@@ -447,7 +519,8 @@ const allTours = [
       "Stone Town",
       "Zanzibar",
     ],
-    price: "From €1,192 per person",
+    price: "From $1,407 per person",
+    image: "/images/wildlife/safari-guide-vehicle.jpeg",
   },
   {
     title: "4 Days in Selous Game Reserve",
@@ -461,7 +534,8 @@ const allTours = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From €1,126 per person",
+    price: "From $1,329 per person",
+    image: "/images/wildlife/safari-salt-lake.jpeg",
   },
   {
     title: "3 Days in Selous Game Reserve",
@@ -475,7 +549,8 @@ const allTours = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From €897 per person",
+    price: "From $1,058 per person",
+    image: "/images/wildlife/elephant-encounter.jpeg",
   },
   {
     title: "2 Days in Selous Game Reserve",
@@ -483,7 +558,8 @@ const allTours = [
     description:
       "Experience an unforgettable two-day safari adventure in the Selous Game Reserve/Nyerere National Park. This tour is packed with activities to make the most of your short stay.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From €729 per person",
+    price: "From $860 per person",
+    image: "/images/wildlife/lioness-tree.jpeg",
   },
   {
     title: "Day safari in Selous Game Reserve",
@@ -491,7 +567,8 @@ const allTours = [
     description:
       "Want to enhance your stay in Zanzibar with a true Tanzanian safari experience? Book this day trip for a thrilling encounter with the wild and a break from the beach.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From €557 per person",
+    price: "From $657 per person",
+    image: "/images/wildlife/safari-baobab.jpeg",
   },
   {
     title: "9 Days | Group Tour February/March 2026 | Northern Tanzania",
@@ -505,7 +582,8 @@ const allTours = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From €3,650 per person",
+    price: "From $4,307 per person",
+    image: "/images/wildlife/baboons-road.jpeg",
   },
   {
     title: "9 Days | Group Tour February 2026 | Northern Tanzania",
@@ -519,82 +597,7 @@ const allTours = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From €4,095 per person",
+    price: "From $4,832 per person",
+    image: "/images/wildlife/lion-grassland.jpeg",
   },
 ]
-
-export default function ToursClientPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#473a30] to-[#ec6417] text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Safari Tours</h1>
-            <p className="text-xl md:text-2xl mb-8 text-balance leading-relaxed">
-              Discover some of our most prestigious safari experiences across Tanzania
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Tours Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="space-y-16">
-            {allTours.map((tour, index) => (
-              <div
-                key={index}
-                className={`flex flex-col lg:flex-row gap-8 items-center ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Image Container - Empty for now */}
-                <div className="w-full lg:w-1/2">
-                  <div className="aspect-[4/3] bg-gray-200 rounded-lg"></div>
-                </div>
-
-                {/* Content */}
-                <div className="w-full lg:w-1/2 space-y-6">
-                  <div>
-                    <h2 className="text-3xl font-bold text-[#473a30] mb-2">{tour.title}</h2>
-                    <div className="flex items-center text-gray-600 mb-4">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{tour.location}</span>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed">{tour.description}</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-[#473a30] mb-3">Tour Highlights</h3>
-                    <div className="grid grid-cols-1 gap-2">
-                      {tour.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center">
-                          <div className="w-2 h-2 bg-[#f9b804] rounded-full mr-3"></div>
-                          <span className="text-gray-700">{highlight}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4">
-                    <div>
-                      <p className="text-2xl font-bold text-[#473a30]">{tour.price}</p>
-                    </div>
-                    <Button
-                      className="bg-[#473a30] hover:bg-[#ec6417] text-white px-8 py-3 rounded-full font-semibold"
-                      onClick={() => window.open("https://wa.me/255123456789", "_blank")}
-                    >
-                      BOOK NOW
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}

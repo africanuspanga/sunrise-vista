@@ -1,30 +1,31 @@
-# Kachiki Safaris website
+# Sunrise Vista Safaris website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Marketing site for **Sunrise Vista Safaris** — tailor-made Tanzania safaris (Serengeti, Ngorongoro, Northern & Southern Circuits, Zanzibar). Live domain: [sunrisevistasafaris.com](https://www.sunrisevistasafaris.com).
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/africanus-s-projects/v0-kachiki-safaris-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/zDhW9ZvrVwx)
+Built with Next.js 14 (App Router, static export), Tailwind CSS v4 and lucide icons.
 
-## Overview
+## Develop
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build      # static export to ./out
+```
 
-## Deployment
+## Where to edit content
 
-Your project is live at:
+| What | File |
+| --- | --- |
+| Phone, WhatsApp, email, address, socials | `lib/site.ts` |
+| Tours & prices | `lib/data/tours.ts` |
+| Homepage featured tours, destinations, FAQs, partners, reviews | `lib/data/home.ts` |
+| Accommodations | `lib/data/accommodations.ts` |
+| Brand colours & fonts | `app/globals.css`, `app/layout.tsx` |
 
-**[https://vercel.com/africanus-s-projects/v0-kachiki-safaris-website](https://vercel.com/africanus-s-projects/v0-kachiki-safaris-website)**
+### Before launch
 
-## Build your app
+- Replace the placeholder phone / WhatsApp / address in `lib/site.ts`.
+- Replace the sample reviews in `lib/data/home.ts` with real guest reviews and set `REVIEWS_ARE_SAMPLES = false`.
+- Add any confirmed memberships or awards (e.g. TATO, TripAdvisor) to `partners` in `lib/data/home.ts`.
 
-Continue building your app on:
-
-**[https://v0.app/chat/projects/zDhW9ZvrVwx](https://v0.app/chat/projects/zDhW9ZvrVwx)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+See `DEPLOYMENT.md` for cPanel hosting.

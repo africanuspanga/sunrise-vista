@@ -1,6 +1,6 @@
 # Deployment Guide for cPanel
 
-This guide explains how to deploy the Kachiki Safaris website to cPanel hosting.
+This guide explains how to deploy the Sunrise Vista Safaris website to cPanel hosting.
 
 ## Prerequisites
 

@@ -1,57 +1,47 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { site } from "@/lib/site"
 
-const inter = Inter({ subsets: ["latin"] })
+const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" })
+const body = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Kachiki Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
+  title: {
+    default: "Sunrise Vista Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
+    template: "%s | Sunrise Vista Safaris",
+  },
   description:
-    "Experience unforgettable Tanzania safari adventures with Kachiki Safaris. Expert guides, luxury accommodations, and authentic African wildlife tours across Serengeti, Ngorongoro Crater, and Zanzibar.",
+    "Experience unforgettable Tanzania safari adventures with Sunrise Vista Safaris. Expert guides, luxury accommodations, and authentic African wildlife tours across Serengeti, Ngorongoro Crater, and Zanzibar.",
   keywords:
     "Tanzania safari, Serengeti tours, Ngorongoro Crater, Zanzibar holidays, African safari, wildlife tours, Big Five safari, Great Migration, Tanzania travel, safari packages",
-  authors: [{ name: "Kachiki Safaris" }],
-  creator: "Kachiki Safaris",
-  publisher: "Kachiki Safaris",
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.kachikisafaris.com"),
-  alternates: {
-    canonical: "/",
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
+  metadataBase: new URL(site.url),
   openGraph: {
-    title: "Kachiki Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
+    title: "Sunrise Vista Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
     description: "Experience unforgettable Tanzania safari adventures with expert guides and luxury accommodations.",
-    url: "https://www.kachikisafaris.com",
-    siteName: "Kachiki Safaris",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kachiki Safaris - Tanzania Wildlife Safari Tours",
-      },
-    ],
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: site.logo, width: 640, height: 640, alt: site.name }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kachiki Safaris - Tanzania Safari Tours",
+    title: "Sunrise Vista Safaris - Tanzania Safari Tours",
     description: "Experience authentic Tanzania safari adventures with expert guides and luxury accommodations.",
-    images: ["/twitter-image.jpg"],
+    images: [site.logo],
   },
   robots: {
     index: true,
@@ -64,11 +54,30 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-    // Add other verification codes as needed
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: site.name,
+  description: "Tanzania safari tours and wildlife adventures",
+  url: site.url,
+  logo: `${site.url}${site.logo}`,
+  telephone: site.phoneHref,
+  email: site.email,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Arusha",
+    addressCountry: "Tanzania",
   },
-  generator: "v0.app",
+  areaServed: [
+    { "@type": "Place", name: "Tanzania" },
+    { "@type": "Place", name: "Serengeti National Park" },
+    { "@type": "Place", name: "Ngorongoro Crater" },
+    { "@type": "Place", name: "Zanzibar" },
+  ],
+  serviceType: "Safari Tours",
+  priceRange: "$$$",
 }
 
 export default function RootLayout({
@@ -77,57 +86,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="canonical" href="https://www.kachikisafaris.com" />
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TravelAgency",
-              name: "Kachiki Safaris",
-              description: "Tanzania safari tours and wildlife adventures",
-              url: "https://www.kachikisafaris.com",
-              telephone: "+255762756046",
-              email: "info@kachikisafaris.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Arusha",
-                addressCountry: "Tanzania",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: "-3.3869",
-                longitude: "36.6830",
-              },
-              sameAs: ["https://wa.me/255762756046"],
-              areaServed: [
-                {
-                  "@type": "Place",
-                  name: "Tanzania",
-                },
-                {
-                  "@type": "Place",
-                  name: "Serengeti National Park",
-                },
-                {
-                  "@type": "Place",
-                  name: "Ngorongoro Crater",
-                },
-                {
-                  "@type": "Place",
-                  name: "Zanzibar",
-                },
-              ],
-              serviceType: "Safari Tours",
-              priceRange: "$$$",
-            }),
-          }}
-        />
-      </head>
-      <body className={inter.className}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="bg-cream text-ink">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />

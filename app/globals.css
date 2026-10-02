@@ -4,31 +4,45 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Sunrise Vista brand — sampled from the logo */
+  --sv-cream: #fffaf0;
+  --sv-sand: #fce8b4;
+  --sv-sand-soft: #fdf2d6;
+  --sv-sun: #f6c343;
+  --sv-amber: #f7a23a;
+  --sv-ember: #ef7d2d;
+  --sv-bark: #55201f;
+  --sv-bark-deep: #2b0f0e;
+  --sv-ink: #3a2421;
+  --sv-muted: #765b55;
+  --sv-line: #ead9c4;
+  --sv-review: #00aa6c;
+
+  --background: var(--sv-cream);
+  --foreground: var(--sv-ink);
+  --card: #ffffff;
+  --card-foreground: var(--sv-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--sv-ink);
+  --primary: var(--sv-bark);
+  --primary-foreground: #ffffff;
+  --secondary: var(--sv-sand);
+  --secondary-foreground: var(--sv-bark);
+  --muted: var(--sv-sand-soft);
+  --muted-foreground: var(--sv-muted);
+  --accent: var(--sv-sand);
+  --accent-foreground: var(--sv-bark);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: var(--sv-line);
+  --input: var(--sv-line);
+  --ring: var(--sv-amber);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -75,8 +89,20 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --color-cream: var(--sv-cream);
+  --color-sand: var(--sv-sand);
+  --color-sand-soft: var(--sv-sand-soft);
+  --color-sun: var(--sv-sun);
+  --color-amber: var(--sv-amber);
+  --color-ember: var(--sv-ember);
+  --color-bark: var(--sv-bark);
+  --color-bark-deep: var(--sv-bark-deep);
+  --color-ink: var(--sv-ink);
+  --color-muted-ink: var(--sv-muted);
+  --color-line: var(--sv-line);
+  --color-review: var(--sv-review);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -121,5 +147,79 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overflow-x: clip;
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .sun-gradient {
+    background-image: linear-gradient(100deg, var(--sv-sun) 0%, var(--sv-amber) 55%, var(--sv-ember) 100%);
+  }
+  /* Clips like overflow-hidden but lets torn edges spill a few px to hide sub-pixel seams. */
+  .edge-clip {
+    overflow: hidden;
+    overflow: clip;
+    overflow-clip-margin: 3px;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .fade-y {
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  }
+}
+
+@keyframes sv-marquee-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+@keyframes sv-spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-marquee-up {
+  animation: sv-marquee-up 45s linear infinite;
+}
+.animate-marquee-up-slow {
+  animation: sv-marquee-up 60s linear infinite;
+}
+.animate-spin-slow {
+  animation: sv-spin-slow 80s linear infinite;
+}
+.marquee-pause:hover .animate-marquee-up,
+.marquee-pause:hover .animate-marquee-up-slow {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-up,
+  .animate-marquee-up-slow,
+  .animate-spin-slow {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }
