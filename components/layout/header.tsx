@@ -18,9 +18,10 @@ const destinationLinks = [
 
 const leftLinks = [
   { href: "/tours", label: "Tours & Safaris" },
-  { href: "/accommodations", label: "Accommodation" },
+  { href: "/kilimanjaro", label: "Kilimanjaro" },
 ]
 const rightLinks = [
+  { href: "/trip-builder", label: "Trip Builder" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ]
@@ -161,7 +162,7 @@ export function Header() {
           <div className="hidden flex-1 items-center justify-end gap-8 lg:flex">
             {rightLinks.map((l) => navLink(l.href, l.label))}
             <Link href="/contact" className={cn(pill.sun, "px-5 py-2.5")}>
-              Plan Your Safari
+              Enquire Now
             </Link>
           </div>
 
@@ -197,8 +198,8 @@ export function Header() {
               <Link href="/#faq" className="border-b border-line/70 py-3 font-medium text-ink">
                 FAQs
               </Link>
-              <Link href="/contact" className={cn(pill.sun, "mt-5 w-full")}>
-                Plan Your Safari
+              <Link href="/trip-builder" className={cn(pill.sun, "mt-5 w-full")}>
+                Build Your Custom Trip
               </Link>
               <div className="mt-5 space-y-2 text-sm text-muted-ink">
                 <a href={`tel:${site.phoneHref}`} className="flex items-center gap-2">

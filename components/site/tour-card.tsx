@@ -1,6 +1,8 @@
 import { Clock, MapPin, Users } from "lucide-react"
 import { bookingLink } from "@/lib/site"
 import { tourPrice } from "@/lib/data/tours"
+import { tourDoc } from "@/lib/pdf/docs"
+import { DownloadPdfButton } from "@/components/pdf/download-pdf-button"
 import { pill } from "./pill"
 
 type TourCardProps = {
@@ -77,9 +79,16 @@ export function TourCard({ title, description, price, image, tag, days, group, l
             <p className="font-serif text-2xl text-bark">{tourPrice({ price })}</p>
             <p className="text-xs text-muted-ink">per person</p>
           </div>
-          <a href={bookingLink(title)} target="_blank" rel="noopener noreferrer" className={`${pill.sun} px-5 py-2.5`}>
-            Book Now
-          </a>
+          <div className="flex items-center gap-2">
+            <DownloadPdfButton
+              variant="icon"
+              label={`Download ${heading} itinerary (PDF)`}
+              doc={tourDoc({ title, description, price, image, location: location ?? heading, highlights: highlights ?? [] })}
+            />
+            <a href={bookingLink(title)} target="_blank" rel="noopener noreferrer" className={`${pill.sun} px-5 py-2.5`}>
+              Book Now
+            </a>
+          </div>
         </div>
       </div>
     </article>

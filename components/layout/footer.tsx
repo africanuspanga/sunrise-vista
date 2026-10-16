@@ -9,7 +9,8 @@ const columns = [
     title: "Useful Links",
     links: [
       { href: "/tours", label: "Tours & Safaris" },
-      { href: "/accommodations", label: "Accommodation" },
+      { href: "/kilimanjaro", label: "Kilimanjaro Trekking" },
+      { href: "/trip-builder", label: "Custom Trip Builder" },
       { href: "/about", label: "About Us" },
       { href: "/#faq", label: "FAQs" },
       { href: "/contact", label: "Contact Us" },
@@ -31,7 +32,8 @@ const columns = [
       { href: "/tours", label: "Big Five Safaris" },
       { href: "/serengeti", label: "Great Migration" },
       { href: "/tours", label: "Group & Shared Safaris" },
-      { href: "/tours", label: "Short Safaris" },
+      { href: "/kilimanjaro/machame", label: "Kilimanjaro Machame Route" },
+      { href: "/kilimanjaro/lemosho", label: "Kilimanjaro Lemosho Route" },
     ],
   },
 ]
@@ -134,10 +136,10 @@ export function Footer() {
             {columns.map((col) => (
               <div key={col.title}>
                 <h3 className="mb-4 border-b border-white/10 pb-3 font-semibold text-white">{col.title}</h3>
-                <ul className="space-y-2.5 text-sm">
+                <ul className="space-y-0.5 text-sm md:space-y-2.5">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href} className="transition-colors hover:text-sun">
+                      <Link href={l.href} className="inline-block py-2 transition-colors hover:text-sun md:py-0">
                         {l.label}
                       </Link>
                     </li>
@@ -173,7 +175,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10">
-          <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-white/50 md:flex-row">
+          <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 pb-24 pt-6 text-xs text-white/50 md:flex-row md:pb-6">
             <p>
               © {new Date().getFullYear()} <span className="font-semibold text-white/80">{site.name}</span>. All rights
               reserved.

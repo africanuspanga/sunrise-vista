@@ -1,10 +1,13 @@
+// Vercel runs the full Next.js server (needed for the /api/chat assistant).
+// `STATIC_EXPORT=1 next build` still produces a plain static site in ./out for cPanel hosting
+// (the AI chat then falls back to WhatsApp).
+const isStaticExport = process.env.STATIC_EXPORT === '1'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  ...(isStaticExport ? { output: 'export', distDir: 'out', skipTrailingSlashRedirect: true } : {}),
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
-  distDir: 'out',
-  
+
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -21,7 +24,18 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  async headers() {
+  ...(isStaticExport ? {} : { redirects, headers }),
+  compress: true,
+}
+
+async function redirects() {
+  return [
+    { source: '/accommodations', destination: '/kilimanjaro/', permanent: true },
+    { source: '/accommodations/', destination: '/kilimanjaro/', permanent: true },
+  ]
+}
+
+async function headers() {
     return [
       {
         source: '/(.*)',
@@ -49,9 +63,7 @@ const nextConfig = {
           },
         ],
       },
-    ]
-  },
-  compress: true,
+  ]
 }
 
 export default nextConfig

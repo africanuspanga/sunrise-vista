@@ -29,3 +29,22 @@ pnpm build      # static export to ./out
 - Add any confirmed memberships or awards (e.g. TATO, TripAdvisor) to `partners` in `lib/data/home.ts`.
 
 See `DEPLOYMENT.md` for cPanel hosting.
+
+## AI travel assistant (Moonshot / Kimi)
+
+The floating "Ask Vista AI" chat calls `/api/chat`, which streams answers from the Moonshot API using site data
+(Kilimanjaro routes, tours, FAQs) as its knowledge. Set these environment variables locally in `.env.local`
+and in the Vercel project settings:
+
+```
+MOONSHOT_API_KEY=...
+MOONSHOT_BASE_URL=https://api.moonshot.ai/v1
+MOONSHOT_MODEL=kimi-k2.6
+```
+
+If the key is missing or the API is unavailable, the chat offers to continue on WhatsApp instead.
+
+## Builds
+
+- `pnpm build` — full Next.js build (Vercel; includes the chat API).
+- `pnpm build:cpanel` — static export to `./out` for cPanel hosting (no chat API; chat falls back to WhatsApp).

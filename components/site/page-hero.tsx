@@ -17,7 +17,7 @@ export function PageHero({ eyebrow, title, subtitle, image, imageAlt, crumb, chi
   return (
     <section className="relative isolate edge-clip bg-bark-deep">
       <img src={image} alt={imageAlt} className="absolute inset-0 -z-10 h-full w-full object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bark-deep/90 via-bark-deep/60 to-bark-deep/20" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bark-deep/90 via-bark-deep/60 to-bark-deep/20 max-md:via-bark-deep/75 max-md:to-bark-deep/60" />
       <div className="container mx-auto px-4 pb-24 pt-20 md:pb-32 md:pt-28">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-sm text-white/70">
           <Link href="/" className="hover:text-sun">

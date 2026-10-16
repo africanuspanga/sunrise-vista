@@ -1,6 +1,6 @@
 import Link from "next/link"
 import type { Metadata } from "next"
-import { ArrowUpRight, Award, Heart, Leaf, MapPin, Star, Users } from "lucide-react"
+import { ArrowUpRight, Award, CalendarDays, Compass, FileDown, Heart, Leaf, MapPin, Send, Star, Users } from "lucide-react"
 import { Hero } from "@/components/home/hero"
 import { PopularTours } from "@/components/home/popular-tours"
 import { Testimonials } from "@/components/home/testimonials"
@@ -10,14 +10,15 @@ import { SectionHeading } from "@/components/site/section-heading"
 import { SunRings } from "@/components/site/sun-rings"
 import { TornEdge } from "@/components/site/torn-edge"
 import { pill } from "@/components/site/pill"
-import { featuredAccommodations } from "@/lib/data/accommodations"
+import { KiliRouteCard } from "@/components/kilimanjaro/route-card"
+import { kiliRoutes } from "@/lib/data/kilimanjaro"
 import { bigFive, destinations, experiences, partners } from "@/lib/data/home"
-import { site } from "@/lib/site"
+import { site, whatsappLink } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: { absolute: "Sunrise Vista Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar" },
   description:
-    "Experience authentic Tanzania safari adventures with Sunrise Vista Safaris. Explore Serengeti, Ngorongoro Crater, Tarangire, and Zanzibar. Expert guides, luxury accommodations, and unforgettable wildlife encounters await.",
+    "Experience authentic Tanzania safari adventures with Sunrise Vista Safaris. Explore Serengeti, Ngorongoro Crater, Tarangire, and Zanzibar. Expert guides, Kilimanjaro climbs, and unforgettable wildlife encounters await.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Sunrise Vista Safaris - Tanzania Safari Tours | Serengeti, Ngorongoro & Zanzibar",
@@ -36,6 +37,13 @@ const reasons = [
   { Icon: MapPin, title: "Local Expertise", text: "Deep knowledge of Tanzania's parks and culture." },
   { Icon: Heart, title: "Personalized Service", text: "Tailor-made itineraries designed around your interests." },
   { Icon: Leaf, title: "Responsible Tourism", text: "Supporting conservation and local communities." },
+]
+
+const builderSteps = [
+  { Icon: Compass, title: "Pick experiences", text: "Safari parks, a Kilimanjaro route, Zanzibar beaches or culture." },
+  { Icon: CalendarDays, title: "Set dates & group", text: "Trip length, travel month and who's coming along." },
+  { Icon: FileDown, title: "Get your itinerary", text: "Instant day-by-day draft and price estimate as a PDF." },
+  { Icon: Send, title: "Send to our team", text: "We reply within 24 hours with a tailored quote." },
 ]
 
 function ReasonItem({ Icon, title, text, side }: (typeof reasons)[number] & { side: "left" | "right" }) {
@@ -173,54 +181,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Accommodation */}
+      {/* Kilimanjaro */}
       <section className="bg-cream py-20 md:py-28">
         <div className="container mx-auto px-4">
           <ScrollRow
             header={
               <SectionHeading
                 align="left"
-                eyebrow="Stay in comfort"
-                title="Surrounded by the Wild"
-                subtitle="From luxury lodges with breathtaking views to authentic bush camps in prime wildlife locations."
+                eyebrow="Kilimanjaro trekking"
+                title="Climb the Roof of Africa"
+                subtitle="Six routes to Uhuru Peak (5,895m) with experienced local mountain crews — from 6 to 9 days."
               />
             }
           >
-            {featuredAccommodations.map((a) => (
-              <article
-                key={a.name}
-                className="group w-[280px] shrink-0 snap-start overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_-22px_rgba(85,32,31,0.45)] ring-1 ring-line md:w-[300px]"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={a.image}
-                    alt={a.name}
-                    loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-110"
-                  />
-                  <span className="absolute left-3 top-3 rounded-full bg-bark px-3 py-1 text-xs font-medium text-sun">
-                    {a.tag}
-                  </span>
-                </div>
-                <div className="p-5">
-                  <p className="flex items-center gap-1.5 text-xs text-muted-ink">
-                    <MapPin className="h-3.5 w-3.5 text-ember" />
-                    {a.area}
-                  </p>
-                  <h3 className="mt-2 font-serif text-lg text-bark">{a.name}</h3>
-                  <p className="mt-1.5 line-clamp-2 text-sm text-muted-ink">{a.summary}</p>
-                </div>
-              </article>
+            {kiliRoutes.map((r) => (
+              <KiliRouteCard key={r.slug} route={r} className="w-[85%] shrink-0 snap-start sm:w-[320px]" />
             ))}
           </ScrollRow>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className={pill.sun}>
-              Start Planning
+            <Link href="/kilimanjaro" className={pill.sun}>
+              Compare All Routes
             </Link>
-            <Link href="/accommodations" className={pill.outlineDark}>
-              View All Accommodation
+            <Link href="/trip-builder?type=kilimanjaro" className={pill.outlineDark}>
+              Climb + Safari Combo
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Trip builder */}
+      <section className="relative isolate overflow-hidden bg-bark-deep py-20 text-white md:py-28">
+        <img
+          src="/images/wildlife/giraffes-balloon.jpeg"
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-bark-deep via-bark-deep/90 to-bark-deep/60" />
+        <div className="container mx-auto grid items-center gap-12 px-4 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              align="left"
+              tone="light"
+              eyebrow="Custom trip builder"
+              title="Design your own Tanzania adventure"
+              subtitle="Combine safaris, Kilimanjaro and Zanzibar, pick your style and get an instant draft itinerary with an indicative price — then download it as a PDF or send it to us."
+            />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/trip-builder" className={pill.sun}>
+                Start Building
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+              <a
+                href={whatsappLink("Hi Sunrise Vista! I'd like help designing a custom trip.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={pill.outlineLight}
+              >
+                Ask on WhatsApp
+              </a>
+            </div>
+          </div>
+          <ol className="grid gap-3 sm:grid-cols-2">
+            {builderSteps.map((s, i) => (
+              <li key={s.title} className="rounded-2xl bg-white/[0.07] p-5 ring-1 ring-white/15 backdrop-blur">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-sun text-bark">
+                  <s.Icon className="h-5 w-5" />
+                </span>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-sun">Step {i + 1}</p>
+                <h3 className="mt-1 font-serif text-xl">{s.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{s.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

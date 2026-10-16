@@ -1,12 +1,15 @@
 import type { MetadataRoute } from "next"
 import { site } from "@/lib/site"
+import { kiliRoutes } from "@/lib/data/kilimanjaro"
 
 export const dynamic = "force-static"
 
 const routes = [
   "",
   "/tours",
-  "/accommodations",
+  "/kilimanjaro",
+  ...kiliRoutes.map((r) => `/kilimanjaro/${r.slug}`),
+  "/trip-builder",
   "/serengeti",
   "/safaris/northern-circuit",
   "/safaris/southern-circuit",

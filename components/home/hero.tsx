@@ -79,7 +79,7 @@ export function Hero() {
             ))}
           </ul>
           <div className="flex items-center gap-4">
-            <div className="flex gap-1.5">
+            <div className="flex">
               {heroSlides.map((s, i) => (
                 <button
                   key={s.image}
@@ -87,8 +87,10 @@ export function Hero() {
                   onClick={() => setIndex(i)}
                   aria-label={`Show slide ${i + 1}`}
                   aria-current={i === index}
-                  className={cn("h-2 rounded-full transition-all", i === index ? "w-7 bg-sun" : "w-2 bg-white/50")}
-                />
+                  className="grid h-11 min-w-[28px] place-items-center px-1"
+                >
+                  <span className={cn("h-2 rounded-full transition-all", i === index ? "w-7 bg-sun" : "w-2 bg-white/50")} />
+                </button>
               ))}
             </div>
             <button

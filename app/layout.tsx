@@ -5,6 +5,7 @@ import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { ChatWidget } from "@/components/chat/chat-widget"
 import { site } from "@/lib/site"
 
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" })
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Sunrise Vista Safaris",
   },
   description:
-    "Experience unforgettable Tanzania safari adventures with Sunrise Vista Safaris. Expert guides, luxury accommodations, and authentic African wildlife tours across Serengeti, Ngorongoro Crater, and Zanzibar.",
+    "Experience unforgettable Tanzania safari adventures with Sunrise Vista Safaris. Expert guides, Kilimanjaro climbs, and authentic African wildlife tours across Serengeti, Ngorongoro Crater, and Zanzibar.",
   keywords:
     "Tanzania safari, Serengeti tours, Ngorongoro Crater, Zanzibar holidays, African safari, wildlife tours, Big Five safari, Great Migration, Tanzania travel, safari packages",
   authors: [{ name: site.name }],
@@ -67,6 +68,7 @@ const jsonLd = {
   email: site.email,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Sakina",
     addressLocality: "Arusha",
     addressCountry: "Tanzania",
   },
@@ -87,12 +89,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-cream text-ink">
+      <body className="overflow-x-clip bg-cream text-ink">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <ChatWidget />
       </body>
     </html>
   )
