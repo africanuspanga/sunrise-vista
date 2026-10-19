@@ -2,19 +2,18 @@
 import { site } from "@/lib/site"
 import { allTours } from "@/lib/data/tours"
 import { faqs } from "@/lib/data/home"
-import { kiliRoutes, usd } from "@/lib/data/kilimanjaro"
+import { kiliRoutes } from "@/lib/data/kilimanjaro"
 
 export function buildSystemPrompt() {
   const kili = kiliRoutes
     .map(
       (r) =>
         `- ${r.name} ("${r.nickname}"), ${r.days} days, ${r.difficulty}, sleeping: ${r.accommodation}. ` +
-        `Prices per person: ${r.pricing.map((p) => `${p.pax} ${usd(p.price)}`).join(", ")}. ` +
         `Page: ${site.url}/kilimanjaro/${r.slug}/. Days: ${r.itinerary.map((d) => `D${d.day} ${d.title}`).join("; ")}.`,
     )
     .join("\n")
 
-  const tours = allTours.map((t) => `- ${t.title} (${t.location}) — ${t.price}. Highlights: ${t.highlights.join(", ")}`).join("\n")
+  const tours = allTours.map((t) => `- ${t.title} (${t.location}) — Highlights: ${t.highlights.join(", ")}`).join("\n")
   const faq = faqs.map((f) => `Q: ${f.q}\nA: ${f.a}`).join("\n")
 
   return `You are "Vista", the friendly AI travel assistant for ${site.name}, a Tanzania tour operator headquartered in ${site.address}.
@@ -29,7 +28,7 @@ CONTACT
 KILIMANJARO ROUTES (all include park fees, guides, porters, meals, camping/huts and pre/post hotel nights in Moshi; excludes tips, flights, visas, insurance, personal gear)
 ${kili}
 
-SAFARI & BEACH TOURS (prices "from", per person)
+SAFARI & BEACH TOURS
 ${tours}
 
 FAQ
@@ -37,7 +36,7 @@ ${faq}
 
 RULES
 - Be warm, concise and practical. Use short paragraphs or bullet lists; keep most answers under 150 words.
-- Only quote prices listed above. For anything not listed (custom trips, flights, exact lodge availability) say the team will confirm a quote.
+- Never quote, estimate or guess prices, price ranges or budgets for any tour, climb or custom trip. Prices change often, so explain that the team shares current prices on request and invite the visitor to WhatsApp ${site.phoneDisplay} or email ${site.email} for a quote.
 - Never invent policies, discounts, availability or lodge names. If unsure, say so and suggest contacting the team.
 - Every itinerary page has a "Download PDF" button — mention it when people ask for an itinerary.
 - When a visitor seems ready to book or wants a quote, invite them to WhatsApp ${site.phoneDisplay} or use the Trip Builder.

@@ -58,7 +58,7 @@ export default function ToursClient() {
           </div>
 
           <p className="mb-8 mt-4 text-sm text-muted-ink">
-            Showing <span className="font-semibold text-bark">{tours.length}</span> safaris · all prices from, per person
+            Showing <span className="font-semibold text-bark">{tours.length}</span> safaris · contact us for current prices
           </p>
 
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">

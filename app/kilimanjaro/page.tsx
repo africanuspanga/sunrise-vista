@@ -7,15 +7,15 @@ import { CtaBand } from "@/components/site/cta-band"
 import { TornEdge } from "@/components/site/torn-edge"
 import { pill } from "@/components/site/pill"
 import { KiliRouteCard } from "@/components/kilimanjaro/route-card"
-import { kiliFacts, kiliFaqs, kiliRoutes, usd } from "@/lib/data/kilimanjaro"
+import { kiliFacts, kiliFaqs, kiliRoutes } from "@/lib/data/kilimanjaro"
 import { site, whatsappLink } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Kilimanjaro Trekking - Climb Africa's Highest Peak",
   description:
-    "Climb Mount Kilimanjaro (5,895m) with Sunrise Vista Safaris. Compare the Machame, Marangu, Lemosho, Rongai, Northern Circuit and Umbwe routes — day-by-day itineraries, group pricing and downloadable PDFs.",
+    "Climb Mount Kilimanjaro (5,895m) with Sunrise Vista Safaris. Compare the Machame, Marangu, Lemosho, Rongai, Northern Circuit and Umbwe routes — day-by-day itineraries and downloadable PDFs.",
   keywords:
-    "Kilimanjaro trekking, climb Kilimanjaro, Machame route, Marangu route, Lemosho route, Rongai route, Northern Circuit, Umbwe route, Uhuru Peak, Kilimanjaro prices",
+    "Kilimanjaro trekking, climb Kilimanjaro, Machame route, Marangu route, Lemosho route, Rongai route, Northern Circuit, Umbwe route, Uhuru Peak",
   alternates: { canonical: "/kilimanjaro" },
   openGraph: {
     title: "Kilimanjaro Trekking | Sunrise Vista Safaris",
@@ -130,7 +130,7 @@ export default function KilimanjaroPage() {
         <div className="container mx-auto px-4">
           <SectionHeading
             eyebrow="Choose your route"
-            title="Kilimanjaro Routes & Prices"
+            title="Kilimanjaro Routes"
             subtitle="Each route offers a different experience and difficulty. Every itinerary includes park fees, guides, porters, meals and hotel nights before and after your climb."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
@@ -149,8 +149,6 @@ export default function KilimanjaroPage() {
                     <th className="px-4 py-3 font-semibold">Days</th>
                     <th className="px-4 py-3 font-semibold">Difficulty</th>
                     <th className="px-4 py-3 font-semibold">Sleeping</th>
-                    <th className="px-4 py-3 font-semibold">Solo</th>
-                    <th className="px-4 py-3 font-semibold">4+ people</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -164,15 +162,13 @@ export default function KilimanjaroPage() {
                       <td className="px-4 py-3">{r.days}</td>
                       <td className="px-4 py-3">{r.difficulty}</td>
                       <td className="px-4 py-3">{r.accommodation}</td>
-                      <td className="px-4 py-3">{usd(r.pricing[0].price)}</td>
-                      <td className="px-4 py-3 font-semibold text-bark">{usd(r.pricing[3].price)} pp</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <p className="mt-3 text-center text-xs text-muted-ink">Swipe the table sideways on mobile · prices per person in USD</p>
+          <p className="mt-3 text-center text-xs text-muted-ink">Swipe the table sideways on mobile · contact us for current prices</p>
         </div>
         <TornEdge className="text-cream" variant={2} />
       </section>

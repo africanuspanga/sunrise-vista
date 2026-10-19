@@ -3,7 +3,6 @@ export type Tour = {
   location: string
   description: string
   highlights: string[]
-  price: string
   image: string
 }
 
@@ -40,11 +39,6 @@ export function tourInCategory(tour: Tour, category: TourCategory) {
   }
 }
 
-// "From $3,507 per person" -> "$3,507"
-export function tourPrice(tour: Pick<Tour, "price">) {
-  return tour.price.replace(/^From\s+/, "").replace(/\s+per person$/, "")
-}
-
 export const allTours: Tour[] = [
   {
     title: "15 Days | Northern Tanzania & Zanzibar",
@@ -52,7 +46,6 @@ export const allTours: Tour[] = [
     description:
       "This tour is for the ultimate Tanzania experience. It's perfect if you want to see all the highlights, from the wildlife-rich northern parks to the stunning beaches of Zanzibar, all in one comprehensive 15-day journey.",
     highlights: ["Arusha National Park", "Boat Safari", "Game Drive", "Lake Manyara National Park", "Lake Natron"],
-    price: "From $3,507 per person",
     image: "/images/wildlife/elephant-tusks.jpeg",
   },
   {
@@ -68,7 +61,6 @@ export const allTours: Tour[] = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From $3,161 per person",
     image: "/images/wildlife/lioness-drinking.jpeg",
   },
   {
@@ -84,7 +76,6 @@ export const allTours: Tour[] = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From $2,492 per person",
     image: "/images/wildlife/zebras-grazing.jpeg",
   },
   {
@@ -100,7 +91,6 @@ export const allTours: Tour[] = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From $2,635 per person",
     image: "/images/wildlife/rhino-habitat.jpeg",
   },
   {
@@ -116,7 +106,6 @@ export const allTours: Tour[] = [
       "Tarangire National Park",
       "Zanzibar",
     ],
-    price: "From $2,617 per person",
     image: "/images/wildlife/elephant-mountains.jpeg",
   },
   {
@@ -132,7 +121,6 @@ export const allTours: Tour[] = [
       "Walking Safari",
       "Zanzibar",
     ],
-    price: "From $2,522 per person",
     image: "/images/wildlife/leopard-tree.png",
   },
   {
@@ -141,7 +129,6 @@ export const allTours: Tour[] = [
     description:
       "Discover the enchanting customs and traditions of Tanzania on this inspiring tour. You'll visit several of the country's national parks before concluding your trip on the beautiful island of Zanzibar.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From $1,993 per person",
     image: "/images/wildlife/cheetah-cub.png",
   },
   {
@@ -150,7 +137,6 @@ export const allTours: Tour[] = [
     description:
       "This fascinating tour starts in the historic town of Stone Town, where you can explore its narrow streets and rich history, before continuing on to the natural beauty of Lake Manyara.",
     highlights: ["Lake Manyara National Park", "Ngorongoro Crater", "Relax Days", "Stone Town", "Zanzibar"],
-    price: "From $1,972 per person",
     image: "/images/wildlife/lion-pride.jpeg",
   },
   {
@@ -166,7 +152,6 @@ export const allTours: Tour[] = [
       "Tarangire National Park",
       "Walking Safari",
     ],
-    price: "From $3,584 per person",
     image: "/images/wildlife/lion-rock.jpeg",
   },
   {
@@ -182,7 +167,6 @@ export const allTours: Tour[] = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From $3,516 per person",
     image: "/images/wildlife/bat-eared-foxes.webp",
   },
   {
@@ -198,7 +182,6 @@ export const allTours: Tour[] = [
       "Pololeti Game Reserve",
       "Serengeti National Park",
     ],
-    price: "From $3,381 per person",
     image: "/images/wildlife/safari-guide-elephants.jpeg",
   },
   {
@@ -214,7 +197,6 @@ export const allTours: Tour[] = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From $2,767 per person",
     image: "/images/wildlife/rhino-sunset.jpeg",
   },
   {
@@ -230,7 +212,6 @@ export const allTours: Tour[] = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From $2,741 per person",
     image: "/images/wildlife/giraffes-balloon.jpeg",
   },
   {
@@ -246,7 +227,6 @@ export const allTours: Tour[] = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From $2,621 per person",
     image: "/images/wildlife/tourist-elephants.jpeg",
   },
   {
@@ -262,7 +242,6 @@ export const allTours: Tour[] = [
       "Serengeti National Park",
       "Tarangire National Park",
     ],
-    price: "From $2,915 per person",
     image: "/images/wildlife/elephant-herd-savanna.jpeg",
   },
   {
@@ -278,7 +257,6 @@ export const allTours: Tour[] = [
       "Game Drive",
       "Lake Manyara National Park",
     ],
-    price: "From $2,692 per person",
     image: "/images/wildlife/wildebeest-migration.jpeg",
   },
   {
@@ -294,7 +272,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Night Game Drive",
     ],
-    price: "From $2,850 per person",
     image: "/images/wildlife/lion-feeding.jpeg",
   },
   {
@@ -310,7 +287,6 @@ export const allTours: Tour[] = [
       "Game Drive",
       "Lake Natron",
     ],
-    price: "From $2,891 per person",
     image: "/images/wildlife/tourist-giraffe.jpeg",
   },
   {
@@ -326,7 +302,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Pololeti Game Reserve",
     ],
-    price: "From $2,767 per person",
     image: "/images/wildlife/cheetah-family.jpeg",
   },
   {
@@ -342,7 +317,6 @@ export const allTours: Tour[] = [
       "Lake Natron",
       "Maasai Boma",
     ],
-    price: "From $2,110 per person",
     image: "/images/wildlife/safari-vehicle-elephant.jpeg",
   },
   {
@@ -357,7 +331,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Serengeti National Park",
     ],
-    price: "From $1,829 per person",
     image: "/images/wildlife/hippos-water.jpeg",
   },
   {
@@ -372,7 +345,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From $1,766 per person",
     image: "/images/wildlife/buffalo-bird.jpeg",
   },
   {
@@ -388,7 +360,6 @@ export const allTours: Tour[] = [
       "Lake Manyara National Park",
       "Maasai Boma",
     ],
-    price: "From $988 per person",
     image: "/images/wildlife/wildebeest-crossing.jpeg",
   },
   {
@@ -403,7 +374,6 @@ export const allTours: Tour[] = [
       "Game Drive",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From $2,136 per person",
     image: "/images/wildlife/safari-zebras.jpeg",
   },
   {
@@ -418,7 +388,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From $1,463 per person",
     image: "/images/wildlife/african-sunset.jpeg",
   },
   {
@@ -433,7 +402,6 @@ export const allTours: Tour[] = [
       "Ngorongoro Crater",
       "Safari Jeep with Pop-up Roof",
     ],
-    price: "From $1,829 per person",
     image: "/images/wildlife/zebras-closeup.jpeg",
   },
   {
@@ -448,7 +416,6 @@ export const allTours: Tour[] = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From $1,056 per person",
     image: "/images/wildlife/giraffe-portrait.jpeg",
   },
   {
@@ -463,7 +430,6 @@ export const allTours: Tour[] = [
       "Lake Manyara National Park",
       "Ngorongoro Crater",
     ],
-    price: "From $728 per person",
     image: "/images/wildlife/colorful-bird.jpeg",
   },
   {
@@ -472,7 +438,6 @@ export const allTours: Tour[] = [
     description:
       "Experience an exciting two-day safari adventure in Tarangire National Park and the famous Ngorongoro Crater. It's the perfect option for a quick, impactful safari trip.",
     highlights: ["Tarangire National Park", "Game Drive", "Ngorongoro Crater", "Safari Jeep with Pop-up Roof"],
-    price: "From $504 per person",
     image: "/images/wildlife/aerial-landscape.jpeg",
   },
   {
@@ -488,7 +453,6 @@ export const allTours: Tour[] = [
       "Bush Walk",
       "Game Drive",
     ],
-    price: "From $2,266 per person",
     image: "/images/wildlife/elephants-waterhole.jpeg",
   },
   {
@@ -504,7 +468,6 @@ export const allTours: Tour[] = [
       "Selous Game Reserve/Nyerere National Park",
       "Stone Town",
     ],
-    price: "From $1,867 per person",
     image: "/images/wildlife/lion-grassland.jpeg",
   },
   {
@@ -519,7 +482,6 @@ export const allTours: Tour[] = [
       "Stone Town",
       "Zanzibar",
     ],
-    price: "From $1,407 per person",
     image: "/images/wildlife/safari-guide-vehicle.jpeg",
   },
   {
@@ -534,7 +496,6 @@ export const allTours: Tour[] = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From $1,329 per person",
     image: "/images/wildlife/safari-salt-lake.jpeg",
   },
   {
@@ -549,7 +510,6 @@ export const allTours: Tour[] = [
       "Game Drive",
       "Selous Game Reserve/Nyerere National Park",
     ],
-    price: "From $1,058 per person",
     image: "/images/wildlife/elephant-encounter.jpeg",
   },
   {
@@ -558,7 +518,6 @@ export const allTours: Tour[] = [
     description:
       "Experience an unforgettable two-day safari adventure in the Selous Game Reserve/Nyerere National Park. This tour is packed with activities to make the most of your short stay.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From $860 per person",
     image: "/images/wildlife/lioness-tree.jpeg",
   },
   {
@@ -567,7 +526,6 @@ export const allTours: Tour[] = [
     description:
       "Want to enhance your stay in Zanzibar with a true Tanzanian safari experience? Book this day trip for a thrilling encounter with the wild and a break from the beach.",
     highlights: ["Domestic Flight", "Game Drive", "Open Safari Jeep", "Selous Game Reserve/Nyerere National Park"],
-    price: "From $657 per person",
     image: "/images/wildlife/safari-baobab.jpeg",
   },
   {
@@ -582,7 +540,6 @@ export const allTours: Tour[] = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From $4,307 per person",
     image: "/images/wildlife/baboons-road.jpeg",
   },
   {
@@ -597,7 +554,6 @@ export const allTours: Tour[] = [
       "Stone Town",
       "Tarangire National Park",
     ],
-    price: "From $4,832 per person",
     image: "/images/wildlife/lion-grassland.jpeg",
   },
 ]

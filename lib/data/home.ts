@@ -11,8 +11,8 @@ export const heroSlides = [
   { image: "/images/wildlife/lion-grassland.jpeg", alt: "Male lion in golden grassland at dawn" },
 ]
 
-// Homepage "Popular Safaris & Tours" — titles, copy and prices carried over unchanged.
-export type FeaturedTour = Pick<Tour, "title" | "description" | "price" | "image"> & {
+// Homepage "Popular Safaris & Tours" — titles and copy carried over unchanged.
+export type FeaturedTour = Pick<Tour, "title" | "description" | "image"> & {
   tag: string
   days: string
   group: string
@@ -22,7 +22,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "15 Days | Northern Tanzania & Zanzibar",
     description: "Ultimate Tanzania experience combining wildlife-rich northern parks with stunning Zanzibar beaches.",
-    price: "From $3,507 per person",
     image: "/images/wildlife/elephant-tusks.jpeg",
     tag: "Premium",
     days: "15 Days",
@@ -31,7 +30,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "11 Days | Wildlife & White Beaches",
     description: "Perfect blend of safari adventure and beach relaxation in northern Tanzania and Zanzibar.",
-    price: "From $3,161 per person",
     image: "/images/wildlife/lioness-drinking.jpeg",
     tag: "Popular",
     days: "11 Days",
@@ -40,7 +38,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "13 Days | Complete Northern Circuit",
     description: "Ultimate safari experience through the heart of African wilderness and all major northern parks.",
-    price: "From $3,584 per person",
     image: "/images/wildlife/rhino-habitat.jpeg",
     tag: "Adventure",
     days: "13 Days",
@@ -49,7 +46,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "8 Days | Great Migration Safari",
     description: "Witness the spectacular wildebeest migration across the Serengeti plains with expert guides.",
-    price: "From $2,891 per person",
     image: "/images/wildlife/safari-guide-elephants.jpeg",
     tag: "Seasonal",
     days: "8 Days",
@@ -58,7 +54,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "6 Days | Balloon Safari Adventure",
     description: "Experience Tanzania from above with hot air balloon safaris over the Serengeti and Ngorongoro.",
-    price: "From $4,543 per person",
     image: "/images/wildlife/giraffes-balloon.jpeg",
     tag: "Unique",
     days: "6 Days",
@@ -67,7 +62,6 @@ export const featuredTours: FeaturedTour[] = [
   {
     title: "10 Days | Photography Safari",
     description: "Specialized photography safari with professional guides and optimal timing for wildlife shots.",
-    price: "From $3,410 per person",
     image: "/images/wildlife/tourist-elephants.jpeg",
     tag: "Photography",
     days: "10 Days",

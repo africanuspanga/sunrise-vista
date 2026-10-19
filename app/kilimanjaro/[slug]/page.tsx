@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Check, Clock, Gauge, MessageCircle, Mountain, Route, Tent, Users, X } from "lucide-react"
+import { ArrowLeft, Check, Clock, Gauge, MessageCircle, Mountain, Route, Tent, X } from "lucide-react"
 import { PageHero } from "@/components/site/page-hero"
 import { SectionHeading } from "@/components/site/section-heading"
 import { CtaBand } from "@/components/site/cta-band"
@@ -9,7 +9,7 @@ import { TornEdge } from "@/components/site/torn-edge"
 import { pill } from "@/components/site/pill"
 import { KiliRouteCard } from "@/components/kilimanjaro/route-card"
 import { DownloadPdfButton } from "@/components/pdf/download-pdf-button"
-import { kiliRoute, kiliRoutes, usd } from "@/lib/data/kilimanjaro"
+import { kiliRoute, kiliRoutes } from "@/lib/data/kilimanjaro"
 import { kiliRouteDoc } from "@/lib/pdf/docs"
 import { bookingLink, site } from "@/lib/site"
 
@@ -27,7 +27,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const title = `${r.name} (${r.days} Days) - ${r.nickname}`
   return {
     title,
-    description: `Climb Kilimanjaro via the ${r.name}: ${r.summary} Day-by-day itinerary, prices from ${usd(r.pricing[3].price)} per person, and a downloadable PDF.`,
+    description: `Climb Kilimanjaro via the ${r.name}: ${r.summary} Day-by-day itinerary and a downloadable PDF.`,
     alternates: { canonical: `/kilimanjaro/${r.slug}` },
     openGraph: {
       title: `${title} | ${site.name}`,
@@ -61,12 +61,6 @@ export default function KiliRoutePage({ params }: Props) {
     description: r.summary,
     touristType: "Trekkers",
     provider: { "@type": "TravelAgency", name: site.name, url: site.url, telephone: site.phoneHref },
-    offers: {
-      "@type": "Offer",
-      price: r.pricing[3].price,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
     itinerary: {
       "@type": "ItemList",
       itemListElement: r.itinerary.map((d) => ({ "@type": "ListItem", position: d.day, name: d.title })),
@@ -90,7 +84,7 @@ export default function KiliRoutePage({ params }: Props) {
         <DownloadPdfButton doc={doc} variant="outlineLight" label="Download PDF" />
       </PageHero>
 
-      {/* Quick facts + price */}
+      {/* Quick facts */}
       <section className="bg-cream pt-2">
         <div className="container mx-auto px-4">
           <Link href="/kilimanjaro" className="inline-flex items-center gap-1.5 text-sm text-muted-ink hover:text-ember">
@@ -226,30 +220,19 @@ export default function KiliRoutePage({ params }: Props) {
             </div>
           </div>
 
-          {/* Sticky pricing sidebar */}
+          {/* Sticky enquiry sidebar */}
           <aside className="lg:sticky lg:top-32 lg:self-start">
             <div className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_-25px_rgba(85,32,31,0.5)] ring-1 ring-line">
               <div className="bg-bark p-6 text-white">
-                <p className="text-xs uppercase tracking-[0.2em] text-sun">Group pricing</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-sun">Price on request</p>
                 <p className="mt-1 font-serif text-2xl">{r.name}</p>
                 <p className="text-sm text-white/75">
                   {r.days} days / {r.days - 1} nights
                 </p>
               </div>
-              <ul className="divide-y divide-line px-6">
-                {r.pricing.map((p, i) => (
-                  <li key={p.pax} className="flex items-center justify-between gap-3 py-3.5">
-                    <span className="flex items-center gap-2 text-sm text-ink">
-                      <Users className="h-4 w-4 text-ember" />
-                      {p.pax}
-                    </span>
-                    <span className="text-right">
-                      <span className="font-serif text-xl text-bark">{usd(p.price)}</span>
-                      {i > 0 && <span className="block text-[11px] text-muted-ink">per person</span>}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <p className="px-6 pt-5 text-sm leading-relaxed text-ink">
+                Prices change with season, group size and park fees. Message us for an up-to-date quote for your dates.
+              </p>
               <div className="space-y-3 p-6 pt-3">
                 <a href={book} target="_blank" rel="noopener noreferrer" className={`${pill.sun} w-full`}>
                   <MessageCircle className="h-4 w-4" />

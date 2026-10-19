@@ -25,10 +25,10 @@ export const parks: Park[] = [
   { id: "mikumi", label: "Mikumi", circuit: "south", nights: 1, blurb: "Open floodplains teeming with zebra, giraffe, buffalo and lions." },
 ]
 
-export const comfortLevels: { id: Comfort; label: string; note: string; safariPerDay: number; beachPerNight: number }[] = [
-  { id: "budget", label: "Budget", note: "Comfortable camps & lodges", safariPerDay: 240, beachPerNight: 110 },
-  { id: "midrange", label: "Mid-range", note: "Quality lodges & tented camps", safariPerDay: 340, beachPerNight: 190 },
-  { id: "luxury", label: "Luxury", note: "Top lodges, private touches", safariPerDay: 620, beachPerNight: 420 },
+export const comfortLevels: { id: Comfort; label: string; note: string }[] = [
+  { id: "budget", label: "Budget", note: "Comfortable camps & lodges" },
+  { id: "midrange", label: "Mid-range", note: "Quality lodges & tented camps" },
+  { id: "luxury", label: "Luxury", note: "Top lodges, private touches" },
 ]
 
 export const interests = [
@@ -217,30 +217,3 @@ export function buildPlan(t: TripInput): PlanDay[] {
   return out.map((d, i) => ({ day: i + 1, ...d }))
 }
 
-/** Indicative per-person price range in USD. */
-export function estimate(t: TripInput) {
-  const comfort = comfortLevels.find((c) => c.id === t.comfort) ?? comfortLevels[1]
-  const plan = buildPlan(t)
-  const travellers = Math.max(1, t.adults + t.children)
-  let pp = 0
-
-  if (t.experiences.includes("kilimanjaro")) {
-    const route = kiliRoutes.find((r) => r.slug === t.kiliRoute)
-    if (route) {
-      const tier = route.pricing[Math.min(travellers, 4) - 1]
-      pp += tier.price
-    }
-  }
-  const safariDays = plan.filter((d) => d.title.startsWith("Safari") || d.title.startsWith("Culture")).length
-  const beachDays = plan.filter((d) => d.title.startsWith("Zanzibar") || d.title === "Fly to Zanzibar").length
-  // Private vehicle costs are shared, so solo travellers pay more per day.
-  const groupFactor = travellers === 1 ? 1.5 : travellers === 2 ? 1 : travellers <= 4 ? 0.88 : 0.8
-  pp += safariDays * comfort.safariPerDay * groupFactor
-  pp += beachDays * comfort.beachPerNight
-  const flies = t.experiences.includes("zanzibar") && (t.experiences.includes("safari") || t.experiences.includes("kilimanjaro"))
-  pp += flies ? 180 : 0 // domestic flight to Zanzibar
-  pp += 120 // arrival hotel, transfers
-
-  const round = (n: number) => Math.round(n / 50) * 50
-  return { low: round(pp * 0.92), high: round(pp * 1.12), travellers }
-}

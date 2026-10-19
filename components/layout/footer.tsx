@@ -69,7 +69,7 @@ export function Footer() {
                 <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted-ink">
                   <li>✦ Private & tailor-made</li>
                   <li>✦ Local Tanzanian guides</li>
-                  <li>✦ Transparent pricing</li>
+                  <li>✦ Tailored quotes</li>
                 </ul>
               </div>
               <div className="hidden items-center gap-6 border-l border-line pl-10 md:flex">

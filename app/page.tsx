@@ -42,7 +42,7 @@ const reasons = [
 const builderSteps = [
   { Icon: Compass, title: "Pick experiences", text: "Safari parks, a Kilimanjaro route, Zanzibar beaches or culture." },
   { Icon: CalendarDays, title: "Set dates & group", text: "Trip length, travel month and who's coming along." },
-  { Icon: FileDown, title: "Get your itinerary", text: "Instant day-by-day draft and price estimate as a PDF." },
+  { Icon: FileDown, title: "Get your itinerary", text: "Instant day-by-day draft itinerary as a PDF." },
   { Icon: Send, title: "Send to our team", text: "We reply within 24 hours with a tailored quote." },
 ]
 
@@ -225,7 +225,7 @@ export default function HomePage() {
               tone="light"
               eyebrow="Custom trip builder"
               title="Design your own Tanzania adventure"
-              subtitle="Combine safaris, Kilimanjaro and Zanzibar, pick your style and get an instant draft itinerary with an indicative price — then download it as a PDF or send it to us."
+              subtitle="Combine safaris, Kilimanjaro and Zanzibar, pick your style and get an instant draft itinerary — then download it as a PDF or send it to us."
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/trip-builder" className={pill.sun}>

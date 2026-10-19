@@ -10,14 +10,14 @@ type Msg = { role: "user" | "assistant"; content: string }
 const GREETING: Msg = {
   role: "assistant",
   content:
-    "Jambo! 👋 I'm Vista, the Sunrise Vista AI assistant. Ask me about safaris, Kilimanjaro routes, Zanzibar, prices or the best time to travel.",
+    "Jambo! 👋 I'm Vista, the Sunrise Vista AI assistant. Ask me about safaris, Kilimanjaro routes, Zanzibar or the best time to travel.",
 }
 
 const SUGGESTIONS = [
-  "Which Kilimanjaro route is best for beginners?",
+  "How do I get a quote for a safari?",
   "Plan a 7-day safari + Zanzibar",
   "When is the Great Migration?",
-  "How much is the Machame route for 2 people?",
+  "Which Kilimanjaro route is best for beginners?",
 ]
 
 /** Renders **bold**, bullet lines and bare URLs — enough for chat answers without a markdown dependency. */

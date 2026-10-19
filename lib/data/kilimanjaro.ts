@@ -1,4 +1,4 @@
-// Kilimanjaro trekking routes — itineraries, inclusions and group pricing.
+// Kilimanjaro trekking routes — itineraries and inclusions.
 const img = (name: string) => `/images/kilimanjaro/${name}`
 
 export type KiliDay = {
@@ -10,8 +10,6 @@ export type KiliDay = {
   time?: string
   image?: string
 }
-
-export type KiliPriceTier = { pax: string; price: number }
 
 export type KiliRoute = {
   slug: string
@@ -29,7 +27,6 @@ export type KiliRoute = {
   itinerary: KiliDay[]
   included: string[]
   notIncluded: string[]
-  pricing: KiliPriceTier[]
 }
 
 const notIncluded = [
@@ -50,13 +47,6 @@ const included = (gate: string, days: number, route: string, stay = "Camping acc
   "All park entrance fees and government levies",
   "Professional, licensed mountain guides, cook and porters",
   "Summit certificate",
-]
-
-const tiers = (one: number, two: number, three: number, four: number): KiliPriceTier[] => [
-  { pax: "1 person", price: one },
-  { pax: "2 people", price: two },
-  { pax: "3 people", price: three },
-  { pax: "4+ people", price: four },
 ]
 
 export const kiliRoutes: KiliRoute[] = [
@@ -144,7 +134,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Machame Gate", 7, "Machame Route"),
     notIncluded,
-    pricing: tiers(2589, 2104, 1942, 1862),
   },
   {
     slug: "marangu",
@@ -221,7 +210,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Marangu Gate", 6, "Marangu Route", "5 nights accommodation in mountain huts while trekking"),
     notIncluded,
-    pricing: tiers(2349, 1864, 1702, 1622),
   },
   {
     slug: "lemosho",
@@ -316,7 +304,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Londorossi Gate", 8, "Lemosho Route"),
     notIncluded,
-    pricing: tiers(2829, 2344, 2182, 2102),
   },
   {
     slug: "rongai",
@@ -402,7 +389,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Rongai Gate", 7, "Rongai Route"),
     notIncluded,
-    pricing: tiers(2589, 2104, 1942, 1862),
   },
   {
     slug: "northern-circuit",
@@ -506,7 +492,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Londorossi Gate", 9, "Northern Circuit"),
     notIncluded,
-    pricing: tiers(3069, 2584, 2422, 2342),
   },
   {
     slug: "umbwe",
@@ -588,7 +573,6 @@ export const kiliRoutes: KiliRoute[] = [
     ],
     included: included("Umbwe/Mweka Gates", 6, "Umbwe Route"),
     notIncluded,
-    pricing: tiers(2835, 1660, 1502, 1452),
   },
 ]
 
@@ -622,4 +606,3 @@ export function kiliRoute(slug: string) {
   return kiliRoutes.find((r) => r.slug === slug)
 }
 
-export const usd = (n: number) => `$${n.toLocaleString("en-US")}`

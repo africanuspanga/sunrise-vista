@@ -1,6 +1,5 @@
 import { Clock, MapPin, Users } from "lucide-react"
 import { bookingLink } from "@/lib/site"
-import { tourPrice } from "@/lib/data/tours"
 import { tourDoc } from "@/lib/pdf/docs"
 import { DownloadPdfButton } from "@/components/pdf/download-pdf-button"
 import { pill } from "./pill"
@@ -8,7 +7,6 @@ import { pill } from "./pill"
 type TourCardProps = {
   title: string
   description: string
-  price: string
   image: string
   tag?: string
   days?: string
@@ -17,7 +15,7 @@ type TourCardProps = {
   highlights?: string[]
 }
 
-export function TourCard({ title, description, price, image, tag, days, group, location, highlights }: TourCardProps) {
+export function TourCard({ title, description, image, tag, days, group, location, highlights }: TourCardProps) {
   // "15 Days | Northern Tanzania & Zanzibar" -> heading "Northern Tanzania & Zanzibar", duration "15 Days"
   const [lead, ...rest] = title.split(" | ")
   const heading = rest.length ? rest.join(" · ") : title
@@ -75,15 +73,14 @@ export function TourCard({ title, description, price, image, tag, days, group, l
         )}
         <div className="mt-auto flex items-end justify-between gap-4 pt-6">
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-ink">Starting from</p>
-            <p className="font-serif text-2xl text-bark">{tourPrice({ price })}</p>
-            <p className="text-xs text-muted-ink">per person</p>
+            <p className="text-xs uppercase tracking-wider text-muted-ink">Price</p>
+            <p className="font-serif text-lg text-bark">On request</p>
           </div>
           <div className="flex items-center gap-2">
             <DownloadPdfButton
               variant="icon"
               label={`Download ${heading} itinerary (PDF)`}
-              doc={tourDoc({ title, description, price, image, location: location ?? heading, highlights: highlights ?? [] })}
+              doc={tourDoc({ title, description, image, location: location ?? heading, highlights: highlights ?? [] })}
             />
             <a href={bookingLink(title)} target="_blank" rel="noopener noreferrer" className={`${pill.sun} px-5 py-2.5`}>
               Book Now

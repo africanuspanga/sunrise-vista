@@ -1,11 +1,10 @@
 import Link from "next/link"
 import { ArrowRight, Clock, Gauge, Tent } from "lucide-react"
-import { type KiliRoute, usd } from "@/lib/data/kilimanjaro"
+import { type KiliRoute } from "@/lib/data/kilimanjaro"
 import { pill } from "@/components/site/pill"
 import { cn } from "@/lib/utils"
 
 export function KiliRouteCard({ route, className }: { route: KiliRoute; className?: string }) {
-  const from = route.pricing[route.pricing.length - 1].price
   return (
     <article
       className={cn(
@@ -46,9 +45,8 @@ export function KiliRouteCard({ route, className }: { route: KiliRoute; classNam
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-ink">{route.summary}</p>
         <div className="mt-auto flex items-end justify-between gap-4 pt-6">
           <div>
-            <p className="text-xs uppercase tracking-wider text-muted-ink">From</p>
-            <p className="font-serif text-2xl text-bark">{usd(from)}</p>
-            <p className="text-xs text-muted-ink">per person (4+)</p>
+            <p className="text-xs uppercase tracking-wider text-muted-ink">Price</p>
+            <p className="font-serif text-lg text-bark">On request</p>
           </div>
           <Link href={`/kilimanjaro/${route.slug}`} className={`${pill.sun} px-5 py-2.5`}>
             View Route

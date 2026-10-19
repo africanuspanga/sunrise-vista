@@ -4,12 +4,11 @@ import { useEffect, useMemo, useState } from "react"
 import { ArrowLeft, ArrowRight, Check, Mail, MessageCircle, Minus, Plus, Sparkles } from "lucide-react"
 import { DownloadPdfButton } from "@/components/pdf/download-pdf-button"
 import { pill } from "@/components/site/pill"
-import { kiliRoutes, usd } from "@/lib/data/kilimanjaro"
+import { kiliRoutes } from "@/lib/data/kilimanjaro"
 import {
   buildPlan,
   comfortLevels,
   defaultTrip,
-  estimate,
   experiences,
   interests,
   minDays,
@@ -104,7 +103,6 @@ export default function TripBuilderClient() {
     })
 
   const plan = useMemo(() => buildPlan(trip), [trip])
-  const price = useMemo(() => estimate(trip), [trip])
   const min = minDays(trip)
   const has = (e: Experience) => trip.experiences.includes(e)
   const route = kiliRoutes.find((r) => r.slug === trip.kiliRoute)
@@ -125,7 +123,6 @@ export default function TripBuilderClient() {
     `Travellers: ${trip.adults} adult${trip.adults > 1 ? "s" : ""}${trip.children ? `, ${trip.children} child${trip.children > 1 ? "ren" : ""}` : ""}`,
     `Style: ${comfort.label}`,
     trip.interests.length ? `Interests: ${trip.interests.join(", ")}` : "",
-    `Indicative budget: ${usd(price.low)} – ${usd(price.high)} per person`,
     trip.notes ? `Notes: ${trip.notes}` : "",
   ].filter(Boolean)
 
@@ -148,7 +145,7 @@ export default function TripBuilderClient() {
       { label: "Duration", value: `${trip.days} days` },
       { label: "Travellers", value: `${trip.adults + trip.children} people` },
       { label: "When", value: trip.startDate || trip.month },
-      { label: "Estimate pp", value: `${usd(price.low)}–${usd(price.high)}` },
+      { label: "Price", value: "On request" },
     ],
     overview: [
       "This draft itinerary was created with the Sunrise Vista trip builder. Our team will refine the routing, lodges and timings around your dates and send a final, fixed quote.",
@@ -156,7 +153,7 @@ export default function TripBuilderClient() {
     highlights: summaryLines,
     days: plan,
     notes: [
-      "Prices shown are indicative per-person estimates in USD and exclude international flights, visas, insurance and tips.",
+      "Prices are quoted on request — send us this itinerary and we'll reply with a tailored quote for your dates.",
       "Everything is customisable — swap parks, change lodges or add extra nights.",
     ],
   })
@@ -292,10 +289,6 @@ export default function TripBuilderClient() {
                             <span className="text-xs text-muted-ink">
                               {r.days} days · {r.difficulty}
                             </span>
-                          </span>
-                          <span className="text-right text-xs text-muted-ink">
-                            from
-                            <span className="block font-serif text-base text-bark">{usd(r.pricing[3].price)}</span>
                           </span>
                         </button>
                       ))}
@@ -549,7 +542,7 @@ export default function TripBuilderClient() {
                   {trip.days} days · {trip.adults + trip.children} traveller{trip.adults + trip.children > 1 ? "s" : ""}
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-white/80">
-                  {summaryLines.filter((l) => !l.startsWith("Indicative") && !l.startsWith("Notes")).map((l) => (
+                  {summaryLines.filter((l) => !l.startsWith("Notes")).map((l) => (
                     <li key={l} className="flex gap-2">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-sun" />
                       <span className="min-w-0 break-words">{l}</span>
@@ -558,12 +551,10 @@ export default function TripBuilderClient() {
                 </ul>
               </div>
               <div className="border-t border-white/10 bg-white/5 p-6">
-                <p className="text-xs uppercase tracking-wider text-white/60">Indicative price per person</p>
-                <p className="mt-1 font-serif text-3xl text-sun">
-                  {usd(price.low)} – {usd(price.high)}
-                </p>
+                <p className="text-xs uppercase tracking-wider text-white/60">Price</p>
+                <p className="mt-1 font-serif text-3xl text-sun">On request</p>
                 <p className="mt-2 text-xs leading-relaxed text-white/60">
-                  Estimate only, excluding international flights. Your final quote depends on season and lodge availability.
+                  Send us your trip and we&apos;ll reply with a tailored quote for your dates and group.
                 </p>
               </div>
             </div>
